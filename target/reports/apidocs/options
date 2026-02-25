@@ -1,0 +1,25 @@
+--no-fonts
+-classpath
+'C:/Users/andre/.m2/repository/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+25
+-sourcepath
+'C:/Users/andre/OneDrive/Documentos/Proyecto Empresariales/ProyectoEmpresariales/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/andre/OneDrive/Documentos/Proyecto Empresariales/ProyectoEmpresariales/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ProyectoEmpresariales 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'ProyectoEmpresariales 1.0-SNAPSHOT API'

@@ -1,0 +1,15 @@
+com\mycompany\proyectoempresariales\Modelo\Gaseosa.class
+com\mycompany\proyectoempresariales\Modelo\IFormulasAlcohol.class
+main.class
+com\mycompany\proyectoempresariales\Vista\GUIEliminar.class
+com\mycompany\proyectoempresariales\Vista\GUIAgregarGaseosa.class
+com\mycompany\proyectoempresariales\Modelo\Alcoholica.class
+com\mycompany\proyectoempresariales\Vista\GUIPantallaPrincipal.class
+com\mycompany\proyectoempresariales\Vista\GUIAgregarAlcoholicas.class
+com\mycompany\proyectoempresariales\Vista\GUIMostrarBalance.class
+com\mycompany\proyectoempresariales\Vista\GUIPrecioVentaGaseosa.class
+com\mycompany\proyectoempresariales\Vista\GUIPrecioVentaAlcohol.class
+com\mycompany\proyectoempresariales\Controlador\BebidaService.class
+com\mycompany\proyectoempresariales\Vista\GUIPrecioVentaTodas.class
+com\mycompany\proyectoempresariales\Modelo\Bebida.class
+com\mycompany\proyectoempresariales\Vista\GUIBuscarBebida.class
