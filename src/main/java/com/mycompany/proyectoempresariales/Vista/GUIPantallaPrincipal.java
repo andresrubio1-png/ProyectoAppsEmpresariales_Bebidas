@@ -39,6 +39,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         JMenuItemPrecioVentaGaseosa = new javax.swing.JMenuItem();
         jMenuCalcularGas = new javax.swing.JMenuItem();
         jMenuListaGas = new javax.swing.JMenuItem();
+        menuEliminar = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         MenuItemLicorAdd = new javax.swing.JMenuItem();
         JMenuPrecioVentaLicores = new javax.swing.JMenuItem();
@@ -47,7 +48,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuBalance = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        menuEliminar = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         mAcercaDe = new javax.swing.JMenuItem();
 
@@ -76,6 +76,10 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenuListaGas.setText("Listar Gaseosas");
         jMenuListaGas.addActionListener(this::jMenuListaGasActionPerformed);
         jMenu3.add(jMenuListaGas);
+
+        menuEliminar.setText("Eliminar Gaseosa");
+        menuEliminar.addActionListener(this::menuEliminarActionPerformed);
+        jMenu3.add(menuEliminar);
 
         jMenuBar1.add(jMenu3);
 
@@ -107,11 +111,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu7);
 
         jMenu1.setText("Gestionar");
-
-        menuEliminar.setText("Eliminar");
-        menuEliminar.addActionListener(this::menuEliminarActionPerformed);
-        jMenu1.add(menuEliminar);
-
         jMenuBar1.add(jMenu1);
 
         jMenu8.setText("Ayuda");
@@ -190,7 +189,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
 
     private void menuEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEliminarActionPerformed
         // TODO add your handling code here:
-        GUIEliminar gui = new GUIEliminar();
+        GUIEliminarGaseosa gui = new GUIEliminarGaseosa();
         gui.setVisible(true);
     }//GEN-LAST:event_menuEliminarActionPerformed
 
