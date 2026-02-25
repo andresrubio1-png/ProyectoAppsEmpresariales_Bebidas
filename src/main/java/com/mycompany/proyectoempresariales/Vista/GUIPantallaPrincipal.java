@@ -74,6 +74,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenu3.add(jMenuCalcularGas);
 
         jMenuListaGas.setText("Listar Gaseosas");
+        jMenuListaGas.addActionListener(this::jMenuListaGasActionPerformed);
         jMenu3.add(jMenuListaGas);
 
         jmenuEliminarGas.setText("Eliminar Gaseosa");
@@ -184,6 +185,11 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private void jmenuEliminarGasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuEliminarGasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmenuEliminarGasActionPerformed
+
+    private void jMenuListaGasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuListaGasActionPerformed
+        GUIGridGaseosas gui = new GUIGridGaseosas();
+        gui.setVisible(true);
+    }//GEN-LAST:event_jMenuListaGasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
