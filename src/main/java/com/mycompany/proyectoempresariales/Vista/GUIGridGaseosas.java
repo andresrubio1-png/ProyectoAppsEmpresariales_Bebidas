@@ -23,6 +23,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame {
      */
     public GUIGridGaseosas() {
         initComponents();
+        setLocationRelativeTo(this);
     }
 
     /**
