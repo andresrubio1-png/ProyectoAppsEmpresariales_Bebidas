@@ -15,5 +15,6 @@ public class main {
         //Prueba de GIT LALALA
         GUIPantallaPrincipal gui = new GUIPantallaPrincipal();
         gui.setVisible(true);
+        //Prueba 2 de GIT OMFG
     }
 }
