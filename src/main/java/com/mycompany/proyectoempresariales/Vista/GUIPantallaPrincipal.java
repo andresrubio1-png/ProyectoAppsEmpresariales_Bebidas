@@ -45,6 +45,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         JMenuPrecioVentaLicores = new javax.swing.JMenuItem();
         jMenuCalcularLicor = new javax.swing.JMenuItem();
         jMenuListarLicor = new javax.swing.JMenuItem();
+        menuEliminar1 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuBalance = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
@@ -98,7 +99,12 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenu4.add(jMenuCalcularLicor);
 
         jMenuListarLicor.setText("Listar Licores");
+        jMenuListarLicor.addActionListener(this::jMenuListarLicorActionPerformed);
         jMenu4.add(jMenuListarLicor);
+
+        menuEliminar1.setText("Eliminar Licor");
+        menuEliminar1.addActionListener(this::menuEliminar1ActionPerformed);
+        jMenu4.add(menuEliminar1);
 
         jMenuBar1.add(jMenu4);
 
@@ -199,6 +205,18 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         gui.setVisible(true);
     }//GEN-LAST:event_jMenuCalcularLicorActionPerformed
 
+    private void jMenuListarLicorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuListarLicorActionPerformed
+        // TODO add your handling code here:
+        GUIGridLicores gui = new GUIGridLicores();
+        gui.setVisible(true);
+    }//GEN-LAST:event_jMenuListarLicorActionPerformed
+
+    private void menuEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEliminar1ActionPerformed
+        // TODO add your handling code here:
+        GUIEliminarAlcohol gui = new GUIEliminarAlcohol();
+        gui.setVisible(true);
+    }//GEN-LAST:event_menuEliminar1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMenuItemPrecioVentaGaseosa;
@@ -220,5 +238,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JMenuItem mAcercaDe;
     private javax.swing.JMenuItem menuEliminar;
+    private javax.swing.JMenuItem menuEliminar1;
     // End of variables declaration//GEN-END:variables
 }

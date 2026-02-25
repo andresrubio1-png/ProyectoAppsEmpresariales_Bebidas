@@ -88,6 +88,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Listar Licores"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuListarLicorActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuEliminar1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Eliminar Licor"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuEliminar1ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
