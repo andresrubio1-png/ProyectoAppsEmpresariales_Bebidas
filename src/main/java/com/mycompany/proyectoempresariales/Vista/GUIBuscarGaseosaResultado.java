@@ -95,6 +95,9 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Precio de Producción:");
 
+        txtPrecioProduccion.setEditable(false);
+
+        txtStock.setEditable(false);
         txtStock.addActionListener(this::txtStockActionPerformed);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -103,14 +106,20 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Volumen (ml) :");
 
+        txtVolumen.setEditable(false);
         txtVolumen.addActionListener(this::txtVolumenActionPerformed);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Gramos de azucar:");
 
+        txtCantAzucar.setEditable(false);
+
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel16.setText("Calorias:");
 
+        txtCalorias.setEditable(false);
+
+        CbRetornable.setEditable(true);
         CbRetornable.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -118,6 +127,10 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel14.setText("Cantidad de gas:");
+
+        txtCantGas.setEditable(false);
+
+        txtSabor.setEditable(false);
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel13.setText("INFORMACIÓN TECNICA");
@@ -227,8 +240,12 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Codigo:");
 
+        txtCodigo.setEditable(false);
+
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Nombre:");
+
+        txtNombre.setEditable(false);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Tipo de Envase:");
@@ -245,6 +262,7 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText("Vencimiento:");
 
+        ftxtFechaVencimiento.setEditable(false);
         ftxtFechaVencimiento.setColumns(3);
         ftxtFechaVencimiento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
         ftxtFechaVencimiento.setText("mm/dd/yyyy");
