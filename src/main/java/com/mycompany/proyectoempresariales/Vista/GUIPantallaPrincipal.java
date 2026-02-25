@@ -94,6 +94,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenu4.add(JMenuPrecioVentaLicores);
 
         jMenuCalcularLicor.setText("Calcular Precio");
+        jMenuCalcularLicor.addActionListener(this::jMenuCalcularLicorActionPerformed);
         jMenu4.add(jMenuCalcularLicor);
 
         jMenuListarLicor.setText("Listar Licores");
@@ -192,6 +193,11 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         GUIEliminarGaseosa gui = new GUIEliminarGaseosa();
         gui.setVisible(true);
     }//GEN-LAST:event_menuEliminarActionPerformed
+
+    private void jMenuCalcularLicorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCalcularLicorActionPerformed
+        GUIPrecioVentaLicor gui = new GUIPrecioVentaLicor();
+        gui.setVisible(true);
+    }//GEN-LAST:event_jMenuCalcularLicorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
