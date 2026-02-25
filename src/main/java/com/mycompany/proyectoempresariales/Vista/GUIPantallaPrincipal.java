@@ -39,15 +39,15 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         JMenuItemPrecioVentaGaseosa = new javax.swing.JMenuItem();
         jMenuCalcularGas = new javax.swing.JMenuItem();
         jMenuListaGas = new javax.swing.JMenuItem();
-        jmenuEliminarGas = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         MenuItemLicorAdd = new javax.swing.JMenuItem();
         JMenuPrecioVentaLicores = new javax.swing.JMenuItem();
         jMenuCalcularLicor = new javax.swing.JMenuItem();
         jMenuListarLicor = new javax.swing.JMenuItem();
-        menuEliminarLicores = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuBalance = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        menuEliminar = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         mAcercaDe = new javax.swing.JMenuItem();
 
@@ -77,10 +77,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenuListaGas.addActionListener(this::jMenuListaGasActionPerformed);
         jMenu3.add(jMenuListaGas);
 
-        jmenuEliminarGas.setText("Eliminar Gaseosa");
-        jmenuEliminarGas.addActionListener(this::jmenuEliminarGasActionPerformed);
-        jMenu3.add(jmenuEliminarGas);
-
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Licores");
@@ -99,9 +95,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenuListarLicor.setText("Listar Licores");
         jMenu4.add(jMenuListarLicor);
 
-        menuEliminarLicores.setText("Eliminar Licores");
-        jMenu4.add(menuEliminarLicores);
-
         jMenuBar1.add(jMenu4);
 
         jMenu7.setText("Inventario");
@@ -112,6 +105,14 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenu7.add(jMenuBalance);
 
         jMenuBar1.add(jMenu7);
+
+        jMenu1.setText("Gestionar");
+
+        menuEliminar.setText("Eliminar");
+        menuEliminar.addActionListener(this::menuEliminarActionPerformed);
+        jMenu1.add(menuEliminar);
+
+        jMenuBar1.add(jMenu1);
 
         jMenu8.setText("Ayuda");
 
@@ -182,14 +183,16 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         gui.setVisible(true);
     }//GEN-LAST:event_jMenuCalcularGasActionPerformed
 
-    private void jmenuEliminarGasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuEliminarGasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmenuEliminarGasActionPerformed
-
     private void jMenuListaGasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuListaGasActionPerformed
         GUIGridGaseosas gui = new GUIGridGaseosas();
         gui.setVisible(true);
     }//GEN-LAST:event_jMenuListaGasActionPerformed
+
+    private void menuEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEliminarActionPerformed
+        // TODO add your handling code here:
+        GUIEliminar gui = new GUIEliminar();
+        gui.setVisible(true);
+    }//GEN-LAST:event_menuEliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -198,6 +201,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuItemGaseosaAdd;
     private javax.swing.JMenuItem MenuItemLicorAdd;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu7;
@@ -209,8 +213,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuListaGas;
     private javax.swing.JMenuItem jMenuListarLicor;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JMenuItem jmenuEliminarGas;
     private javax.swing.JMenuItem mAcercaDe;
-    private javax.swing.JMenuItem menuEliminarLicores;
+    private javax.swing.JMenuItem menuEliminar;
     // End of variables declaration//GEN-END:variables
 }
