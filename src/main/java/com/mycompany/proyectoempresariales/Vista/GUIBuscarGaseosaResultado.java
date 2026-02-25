@@ -47,7 +47,7 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
             CbRetornable.setSelectedIndex(0);
         }else
             CbRetornable.setSelectedIndex(1);
-        //HOLA
+        
         
         
     }
@@ -212,9 +212,9 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtVolumen))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtVolumen)
+                    .addComponent(jLabel4))
                 .addGap(29, 29, 29)
                 .addComponent(jLabel13)
                 .addGap(36, 36, 36)
