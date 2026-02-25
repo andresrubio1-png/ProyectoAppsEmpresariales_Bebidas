@@ -34,23 +34,20 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
         MenuItemGaseosaAdd = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        MenuItemLicorAdd = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItemBuscar = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
         JMenuItemPrecioVentaGaseosa = new javax.swing.JMenuItem();
-        jSeparator4 = new javax.swing.JPopupMenu.Separator();
+        jMenuCalcularGas = new javax.swing.JMenuItem();
+        jMenuListaGas = new javax.swing.JMenuItem();
+        jmenuEliminarGas = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        MenuItemLicorAdd = new javax.swing.JMenuItem();
         JMenuPrecioVentaLicores = new javax.swing.JMenuItem();
-        jSeparator5 = new javax.swing.JPopupMenu.Separator();
-        jMenuTotalidad = new javax.swing.JMenuItem();
+        jMenuCalcularLicor = new javax.swing.JMenuItem();
+        jMenuListarLicor = new javax.swing.JMenuItem();
+        menuEliminarLicores = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuBalance = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
-        jMenuEliminar = new javax.swing.JMenuItem();
-        jSeparator7 = new javax.swing.JPopupMenu.Separator();
         jMenu8 = new javax.swing.JMenu();
         mAcercaDe = new javax.swing.JMenuItem();
 
@@ -60,46 +57,51 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("ACS DISTRIBUCIONES SAS");
 
-        jMenu1.setText("Agregar");
-        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jMenu3.setText("Gaseosa");
 
-        MenuItemGaseosaAdd.setText("Gaseosa");
+        MenuItemGaseosaAdd.setText("Agregar Gaseosa");
+        MenuItemGaseosaAdd.setToolTipText("");
         MenuItemGaseosaAdd.addActionListener(this::MenuItemGaseosaAddActionPerformed);
-        jMenu1.add(MenuItemGaseosaAdd);
-        jMenu1.add(jSeparator1);
+        jMenu3.add(MenuItemGaseosaAdd);
 
-        MenuItemLicorAdd.setText("Licor");
-        MenuItemLicorAdd.addActionListener(this::MenuItemLicorAddActionPerformed);
-        jMenu1.add(MenuItemLicorAdd);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Busqueda");
-
-        jMenuItemBuscar.setText("Buscar Bebida");
-        jMenuItemBuscar.addActionListener(this::jMenuItemBuscarActionPerformed);
-        jMenu2.add(jMenuItemBuscar);
-
-        jMenuBar1.add(jMenu2);
-
-        jMenu6.setText("Precios de Venta");
-
-        JMenuItemPrecioVentaGaseosa.setText("Gaseosas");
+        JMenuItemPrecioVentaGaseosa.setText("Buscar Gaseosas");
         JMenuItemPrecioVentaGaseosa.setToolTipText("");
         JMenuItemPrecioVentaGaseosa.addActionListener(this::JMenuItemPrecioVentaGaseosaActionPerformed);
-        jMenu6.add(JMenuItemPrecioVentaGaseosa);
-        jMenu6.add(jSeparator4);
+        jMenu3.add(JMenuItemPrecioVentaGaseosa);
 
-        JMenuPrecioVentaLicores.setText("Licores");
+        jMenuCalcularGas.setText("Calcular Precio");
+        jMenuCalcularGas.addActionListener(this::jMenuCalcularGasActionPerformed);
+        jMenu3.add(jMenuCalcularGas);
+
+        jMenuListaGas.setText("Listar Gaseosas");
+        jMenu3.add(jMenuListaGas);
+
+        jmenuEliminarGas.setText("Eliminar Gaseosa");
+        jmenuEliminarGas.addActionListener(this::jmenuEliminarGasActionPerformed);
+        jMenu3.add(jmenuEliminarGas);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Licores");
+
+        MenuItemLicorAdd.setText("Agregar Licor");
+        MenuItemLicorAdd.addActionListener(this::MenuItemLicorAddActionPerformed);
+        jMenu4.add(MenuItemLicorAdd);
+
+        JMenuPrecioVentaLicores.setText("Buscar Licores");
         JMenuPrecioVentaLicores.addActionListener(this::JMenuPrecioVentaLicoresActionPerformed);
-        jMenu6.add(JMenuPrecioVentaLicores);
-        jMenu6.add(jSeparator5);
+        jMenu4.add(JMenuPrecioVentaLicores);
 
-        jMenuTotalidad.setText("Totalidad");
-        jMenuTotalidad.addActionListener(this::jMenuTotalidadActionPerformed);
-        jMenu6.add(jMenuTotalidad);
+        jMenuCalcularLicor.setText("Calcular Precio");
+        jMenu4.add(jMenuCalcularLicor);
 
-        jMenuBar1.add(jMenu6);
+        jMenuListarLicor.setText("Listar Licores");
+        jMenu4.add(jMenuListarLicor);
+
+        menuEliminarLicores.setText("Eliminar Licores");
+        jMenu4.add(menuEliminarLicores);
+
+        jMenuBar1.add(jMenu4);
 
         jMenu7.setText("Inventario");
 
@@ -109,16 +111,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenu7.add(jMenuBalance);
 
         jMenuBar1.add(jMenu7);
-
-        jMenu5.setText("Gestionar");
-
-        jMenuEliminar.setText("Eliminar");
-        jMenuEliminar.setToolTipText("");
-        jMenuEliminar.addActionListener(this::jMenuEliminarActionPerformed);
-        jMenu5.add(jMenuEliminar);
-        jMenu5.add(jSeparator7);
-
-        jMenuBar1.add(jMenu5);
 
         jMenu8.setText("Ayuda");
 
@@ -155,11 +147,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
        gui.setVisible(true);
     }//GEN-LAST:event_MenuItemGaseosaAddActionPerformed
 
-    private void jMenuItemBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemBuscarActionPerformed
-        GUIBuscarBebida gui = new GUIBuscarBebida();
-        gui.setVisible(true);
-    }//GEN-LAST:event_jMenuItemBuscarActionPerformed
-
     private void MenuItemLicorAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLicorAddActionPerformed
        GUIAgregarAlcoholicas gui = new GUIAgregarAlcoholicas();
        gui.setVisible(true);
@@ -175,20 +162,10 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
        gui.setVisible(true);
     }//GEN-LAST:event_JMenuPrecioVentaLicoresActionPerformed
 
-    private void jMenuTotalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuTotalidadActionPerformed
-       GUIPrecioVentaTodas gui = new GUIPrecioVentaTodas();
-       gui.setVisible(true);
-    }//GEN-LAST:event_jMenuTotalidadActionPerformed
-
     private void jMenuBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuBalanceActionPerformed
         GUIMostrarBalance gui = new GUIMostrarBalance();
         gui.setVisible(true);
     }//GEN-LAST:event_jMenuBalanceActionPerformed
-
-    private void jMenuEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuEliminarActionPerformed
-        GUIEliminar gui = new GUIEliminar();
-        gui.setVisible(true);
-    }//GEN-LAST:event_jMenuEliminarActionPerformed
 
     private void mAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAcercaDeActionPerformed
         String AcercaDe = "Realizado por: Andres Mauricio Rubio Rios "
@@ -198,6 +175,14 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, AcercaDe);
     }//GEN-LAST:event_mAcercaDeActionPerformed
 
+    private void jMenuCalcularGasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCalcularGasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuCalcularGasActionPerformed
+
+    private void jmenuEliminarGasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuEliminarGasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmenuEliminarGasActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMenuItemPrecioVentaGaseosa;
@@ -205,22 +190,19 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuItemGaseosaAdd;
     private javax.swing.JMenuItem MenuItemLicorAdd;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuItem jMenuBalance;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuEliminar;
-    private javax.swing.JMenuItem jMenuItemBuscar;
-    private javax.swing.JMenuItem jMenuTotalidad;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenuItem jMenuCalcularGas;
+    private javax.swing.JMenuItem jMenuCalcularLicor;
+    private javax.swing.JMenuItem jMenuListaGas;
+    private javax.swing.JMenuItem jMenuListarLicor;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JPopupMenu.Separator jSeparator4;
-    private javax.swing.JPopupMenu.Separator jSeparator5;
-    private javax.swing.JPopupMenu.Separator jSeparator7;
+    private javax.swing.JMenuItem jmenuEliminarGas;
     private javax.swing.JMenuItem mAcercaDe;
+    private javax.swing.JMenuItem menuEliminarLicores;
     // End of variables declaration//GEN-END:variables
 }
