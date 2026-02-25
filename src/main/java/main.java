@@ -12,6 +12,7 @@ import com.mycompany.proyectoempresariales.Vista.*;
  */
 public class main {
     public static void main(String[] args) {
+        //Prueba de GIT LALALA
         GUIPantallaPrincipal gui = new GUIPantallaPrincipal();
         gui.setVisible(true);
     }
