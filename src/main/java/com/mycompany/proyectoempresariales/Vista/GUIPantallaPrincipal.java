@@ -158,8 +158,8 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_JMenuItemPrecioVentaGaseosaActionPerformed
 
     private void JMenuPrecioVentaLicoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuPrecioVentaLicoresActionPerformed
-       GUIPrecioVentaAlcohol gui = new GUIPrecioVentaAlcohol();
-       gui.setVisible(true);
+       //GUIPrecioVentaAlcohol gui = new GUIPrecioVentaAlcohol();
+      // gui.setVisible(true);
     }//GEN-LAST:event_JMenuPrecioVentaLicoresActionPerformed
 
     private void jMenuBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuBalanceActionPerformed
