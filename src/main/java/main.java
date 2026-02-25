@@ -11,8 +11,9 @@ import com.mycompany.proyectoempresariales.Vista.*;
  * @author Andres
  */
 public class main {
+    
     public static void main(String[] args) {
-        //Prueba #6 si veo esto en git entonces no debo hacer tantos pushs
+        //Prueba #12212 si veo esto en git entonces no debo hacer tantos pushs
         GUIPantallaPrincipal gui = new GUIPantallaPrincipal();
         gui.setVisible(true);
         
