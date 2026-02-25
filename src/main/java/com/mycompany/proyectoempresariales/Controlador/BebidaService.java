@@ -54,6 +54,12 @@ public class BebidaService {
         b.setStock(0);
         b.setEstado("Sin Stock");
     }
+    //Calcular Ganancia de venta x Stock
+    public static double ganancia(Bebida b){
+        double Ganancia = 0;
+        Ganancia = b.calcularValorFinal()*b.getStock();
+        return Ganancia;
+    }
     
     
 }
