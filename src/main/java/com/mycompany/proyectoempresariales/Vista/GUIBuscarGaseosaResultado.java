@@ -47,6 +47,7 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
             CbRetornable.setSelectedIndex(0);
         }else
             CbRetornable.setSelectedIndex(1);
+        //HOLA
         
         
     }
