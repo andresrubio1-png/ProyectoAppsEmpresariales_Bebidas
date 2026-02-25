@@ -177,6 +177,8 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
 
     private void jMenuCalcularGasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuCalcularGasActionPerformed
         // TODO add your handling code here:
+        GUIPrecioVentaGaseosa gui = new GUIPrecioVentaGaseosa();
+        gui.setVisible(true);
     }//GEN-LAST:event_jMenuCalcularGasActionPerformed
 
     private void jmenuEliminarGasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuEliminarGasActionPerformed
