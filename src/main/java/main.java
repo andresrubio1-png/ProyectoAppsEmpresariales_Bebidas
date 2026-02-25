@@ -12,7 +12,7 @@ import com.mycompany.proyectoempresariales.Vista.*;
  */
 public class main {
     public static void main(String[] args) {
-        
+        //Prueba #4 si veo esto en git entonces no debo hacer tantos pushs
         GUIPantallaPrincipal gui = new GUIPantallaPrincipal();
         gui.setVisible(true);
         
