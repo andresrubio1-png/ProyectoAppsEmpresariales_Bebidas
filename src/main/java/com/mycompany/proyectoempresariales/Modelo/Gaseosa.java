@@ -25,6 +25,9 @@ public class Gaseosa extends Bebida{
         this.Retornable = Retornable;
         
     }
+    public boolean getRetornable(){
+        return Retornable;
+    }
     //Verificar que la cantidad de gas sea mayor a 0
     public void setCantidadGas(double CantidadGas) throws Exception{
         if(CantidadGas<0){
