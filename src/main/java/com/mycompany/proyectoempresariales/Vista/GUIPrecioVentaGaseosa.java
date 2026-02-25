@@ -64,9 +64,14 @@ public class GUIPrecioVentaGaseosa extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Nombre:");
 
+        txtNombre.setEditable(false);
+
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Precio de Producción:");
 
+        txtPrecioProduccion.setEditable(false);
+
+        txtStock.setEditable(false);
         txtStock.addActionListener(this::txtStockActionPerformed);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -75,8 +80,12 @@ public class GUIPrecioVentaGaseosa extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Precio Sugerido de venta:");
 
+        txtPrecioVenta.setEditable(false);
+
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Ganancia Aproximada:");
+
+        txtGananciaAprox.setEditable(false);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText("RESULTADOS:");
@@ -207,14 +216,8 @@ public class GUIPrecioVentaGaseosa extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -222,11 +225,7 @@ public class GUIPrecioVentaGaseosa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField txtBuscar;
-    private javax.swing.JTextField txtBuscar1;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtGananciaAprox;
     private javax.swing.JTextField txtNombre;

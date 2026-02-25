@@ -163,6 +163,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombre">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
@@ -173,8 +176,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPrecioProduccion">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtStock">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtStockActionPerformed"/>
           </Events>
@@ -196,6 +205,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPrecioVenta">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
@@ -206,6 +218,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtGananciaAprox">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
