@@ -285,7 +285,14 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame {
     private javax.swing.JTextField txtStock;
     // End of variables declaration//GEN-END:variables
 
-    private void llenardatos(Alcoholica A) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private void llenardatos(Alcoholica g) {
+       double Ganancia = BebidaService.ganancia(g);
+        txtCodigo.setText(String.valueOf(g.getCodigo()));
+        txtNombre.setText(g.getNombre());
+        txtPrecioProduccion.setText(String.valueOf(g.getPrecioProduccion()));
+        txtStock.setText(String.valueOf(g.getStock()));
+        txtPrecioVenta.setText(String.valueOf(g.calcularValorFinal()));
+        txtGananciaAprox.setText(String.valueOf(Ganancia));
+        txtEstado.setText(g.getEstado());
     }
 }
