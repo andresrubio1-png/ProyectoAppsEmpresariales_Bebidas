@@ -15,7 +15,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIPantallaPrincipal.class.getName());
 
     /**
-     * Creates new form PantallaPrincipal
+     * Creates new form PantallaPrincipall
      */
     public GUIPantallaPrincipal() {
         initComponents();
@@ -48,7 +48,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         menuEliminar1 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuBalance = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         mAcercaDe = new javax.swing.JMenuItem();
 
@@ -116,9 +115,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenu7.add(jMenuBalance);
 
         jMenuBar1.add(jMenu7);
-
-        jMenu1.setText("Gestionar");
-        jMenuBar1.add(jMenu1);
 
         jMenu8.setText("Ayuda");
 
@@ -224,7 +220,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuItemGaseosaAdd;
     private javax.swing.JMenuItem MenuItemLicorAdd;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu7;
