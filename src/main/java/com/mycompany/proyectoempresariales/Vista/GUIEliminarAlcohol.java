@@ -222,8 +222,11 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame {
         Alcoholica A = (Alcoholica) BebidaService.BuscarBebida(Codigo);
         if(A!= null){
             llenardatos(A);
-        JOptionPane.showMessageDialog(this, "Licor no Existente");
         }
+            else
+            JOptionPane.showMessageDialog(this, "Licor no Existente");
+                
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
