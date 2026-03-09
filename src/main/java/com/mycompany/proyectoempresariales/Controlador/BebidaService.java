@@ -13,7 +13,7 @@ import java.util.List;
 public class BebidaService {
 
     //Creacion de la coleccion de bebidas disponibles a despacho
-    private static List<Bebida> Bebidas = new ArrayList();
+    private static List<Bebida> Bebidas = new ArrayList(); 
 
 
     //Metodo de agregacion
