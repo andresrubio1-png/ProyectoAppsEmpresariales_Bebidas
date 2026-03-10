@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author andre
  */
-public class GUIGridGaseosas extends javax.swing.JFrame {
+public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable{
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIGridGaseosas.class.getName());
 
@@ -43,7 +43,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("C");
 
-        jTable1.setBackground(new java.awt.Color(252, 248, 252));
+        jTable1.setBackground(new java.awt.Color(229, 243, 239));
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -56,7 +56,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame {
                 "Codigo", "Tipo", "Nombre", "Precio Prod...", "Precio Venta", "Stock", "Estado", "Envase", "Fecha Vencimiento"
             }
         ));
-        jTable1.setGridColor(new java.awt.Color(255, 0, 204));
+        jTable1.setGridColor(new java.awt.Color(0, 102, 102));
         jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -129,4 +129,9 @@ public class GUIGridGaseosas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void cambio() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
