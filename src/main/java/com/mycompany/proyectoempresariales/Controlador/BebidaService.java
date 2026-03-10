@@ -14,11 +14,6 @@ public class BebidaService {
 
     //Creacion de la coleccion de bebidas disponibles a despacho
     private static List<Bebida> Bebidas = new ArrayList(); 
-
-
-    //Metodo de agregacion
-
-    int prueba = 4;
     
     //Método de agregación 
     public static Bebida addBebidas(Bebida bebida){
