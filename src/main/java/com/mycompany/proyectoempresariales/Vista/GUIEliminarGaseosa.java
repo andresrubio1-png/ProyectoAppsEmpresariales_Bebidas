@@ -261,10 +261,9 @@ public class GUIEliminarGaseosa extends javax.swing.JFrame {
     //Cambio Camila (Eliminar)
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int Codigo = Integer.parseInt(txtCodigo.getText());
-        Object G = null;
-        
+        Gaseosa G = (Gaseosa) BebidaService.BuscarBebida(Codigo);
         if(G != null){
-            BebidaService.EliminardelSistema(Codigo); //Botón eliminar gaseosa
+            BebidaService.EliminardelSistema(G); //Botón eliminar gaseosa
             llenardatos((Gaseosa) G);
             JOptionPane.showMessageDialog(this, "Gaseosa eliminada correctamente");
         }else{
