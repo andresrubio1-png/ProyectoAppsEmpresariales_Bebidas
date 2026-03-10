@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author andre
  */
-public class GUIEliminarAlcohol extends javax.swing.JFrame implements IGuiCambiable{
+public class GUIEliminarAlcohol extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIEliminarAlcohol.class.getName());
     private Alcoholica G;
@@ -24,7 +24,7 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame implements IGuiCambia
     public GUIEliminarAlcohol() {
         initComponents();
         setLocationRelativeTo(this);
-        GuiService.registrarGUI(this);
+        
     }
 
     /**
@@ -236,13 +236,13 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame implements IGuiCambia
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEstadoActionPerformed
 
-   
+
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
                                          
         int Codigo = Integer.parseInt(txtCodigo.getText());
          Alcoholica G = (Alcoholica) BebidaService.BuscarBebida(Codigo);
         if( G != null){
-            BebidaService.EliminardelSistema(Codigo); //Botón eliminar alcohol
+            BebidaService.EliminardelSistema(G); //Botón eliminar alcohol
             llenardatos(G);
             JOptionPane.showMessageDialog(this, "Licor eliminado correctamente");
         }else{
@@ -255,27 +255,6 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame implements IGuiCambia
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new GUIEliminarAlcohol().setVisible(true));
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
@@ -310,8 +289,7 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame implements IGuiCambia
         txtEstado.setText(g.getEstado());
     }
 
-    @Override
-    public void cambio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+  
+
+   
 }
