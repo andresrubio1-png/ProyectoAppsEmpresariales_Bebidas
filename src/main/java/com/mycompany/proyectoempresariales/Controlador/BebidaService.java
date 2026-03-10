@@ -64,13 +64,11 @@ public class BebidaService {
     }
 
     //Metodo de eliminacion del sistema
-    public static void EliminardelSistema(int Codigo){
-        Bebida b = BuscarBebida(Codigo);
-
-        if(b != null){          //verifica que la bebida exista
-            b.setStock(0);     //stock en 0
-            b.setEstado("No disponible"); //estado cambiado
-        }
+    public static void EliminardelSistema(Bebida b){
+            b.setStock(0);
+            b.setEstado("No disponible");
+            GuiService.cambioEnGUI();
+        
     }
 
     //Calcular Ganancia de venta x Stock
