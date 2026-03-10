@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 public class GUIEliminarAlcohol extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIEliminarAlcohol.class.getName());
+    private Alcoholica G;
 
     /**
      * Creates new form GUIEliminarAlcohol
@@ -233,11 +234,18 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEstadoActionPerformed
 
+    //Cambio Camila (Eliminar)
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int Codigo = Integer.parseInt(txtCodigo.getText());
-        Alcoholica G = (Alcoholica) BebidaService.BuscarBebida(Codigo);
-        BebidaService.EliminardelSistema(Codigo);
-        llenardatos(G);
+        
+        if( G != null){
+            BebidaService.EliminardelSistema(Codigo); //Botón eliminar alcohol
+            llenardatos(G);
+            JOptionPane.showMessageDialog(this, "Licor eliminado correctamente");
+        }else{
+            JOptionPane.showMessageDialog(this, "Licor no existente");
+        }
+        
 
     }//GEN-LAST:event_btnEliminarActionPerformed
 
