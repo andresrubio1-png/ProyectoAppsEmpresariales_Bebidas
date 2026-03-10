@@ -21,7 +21,7 @@ public class GuiService {
     
     public static void eliminarGUI(IGuiCambiable gui){
         guis.remove(gui);
-    }
+    } 
     
    public static void cambioEnGUI(){
         for(IGuiCambiable gui : guis){
