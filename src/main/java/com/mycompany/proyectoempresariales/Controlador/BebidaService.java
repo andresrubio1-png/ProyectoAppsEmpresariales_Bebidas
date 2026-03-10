@@ -23,6 +23,7 @@ public class BebidaService {
     //Método de agregación 
     public static Bebida addBebidas(Bebida bebida){
         Bebidas.add(bebida);
+        GuiService.cambioEnGUI();
         return bebida;
     }
 
