@@ -5,6 +5,7 @@
 package com.mycompany.proyectoempresariales.Vista;
 
 import com.mycompany.proyectoempresariales.Controlador.BebidaService;
+import com.mycompany.proyectoempresariales.Controlador.GuiService;
 import com.mycompany.proyectoempresariales.Modelo.Alcoholica;
 import com.mycompany.proyectoempresariales.Modelo.Bebida;
 import java.util.List;
@@ -14,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author andre
  */
-public class GUIGridLicores extends javax.swing.JFrame {
+public class GUIGridLicores extends javax.swing.JFrame implements IGuiCambiable{
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIGridLicores.class.getName());
 
@@ -24,6 +25,7 @@ public class GUIGridLicores extends javax.swing.JFrame {
     public GUIGridLicores() {
         initComponents();
         setLocationRelativeTo(this);
+        GuiService.registrarGUI(this);
     }
 
     /**
@@ -42,6 +44,11 @@ public class GUIGridLicores extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Lista Licores");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jTable1.setBackground(new java.awt.Color(250, 255, 250));
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -99,6 +106,15 @@ public class GUIGridLicores extends javax.swing.JFrame {
 
     private void btnListarGaseosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarGaseosaActionPerformed
         // TODO add your handling code here:
+        getValues ();
+    }//GEN-LAST:event_btnListarGaseosaActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        GuiService.eliminarGUI(this);
+    }//GEN-LAST:event_formWindowClosed
+
+    private void getValues () {
         List<Alcoholica> lista = BebidaService.listarLicores();
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
@@ -116,8 +132,8 @@ public class GUIGridLicores extends javax.swing.JFrame {
                 b.getFechaVencimiento()
             });
         }
-    }//GEN-LAST:event_btnListarGaseosaActionPerformed
-
+    
+}
     /**
      * @param args the command line arguments
      */
@@ -149,4 +165,9 @@ public class GUIGridLicores extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void cambio() {
+        getValues();
+    }
 }

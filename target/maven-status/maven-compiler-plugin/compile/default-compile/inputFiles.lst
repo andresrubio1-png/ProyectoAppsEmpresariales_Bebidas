@@ -1,4 +1,5 @@
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Controlador\BebidaService.java
+C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Controlador\GuiService.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Modelo\Alcoholica.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Modelo\Bebida.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Modelo\Gaseosa.java
@@ -8,7 +9,6 @@ C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\GUIAgregarGaseosa.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\GUIBuscarAlcohol.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\GUIBuscarAlcoholResult.java
-C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\GUIBuscarBebida.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\GUIBuscarGaseosa.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\GUIBuscarGaseosaResultado.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\GUIEliminar.java
@@ -22,4 +22,5 @@ C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\GUIPrecioVentaGaseosa.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\GUIPrecioVentaLicor.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\GUIPrecioVentaTodas.java
+C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\com\mycompany\proyectoempresariales\Vista\IGuiCambiable.java
 C:\Users\Camila\Documents\NetBeansProjects\ProyectoAppsEmpresariales_Bebidas\src\main\java\main.java
