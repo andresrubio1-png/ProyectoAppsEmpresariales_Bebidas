@@ -5,6 +5,7 @@
 package com.mycompany.proyectoempresariales.Vista;
 
 import com.mycompany.proyectoempresariales.Controlador.BebidaService;
+import com.mycompany.proyectoempresariales.Controlador.GuiService;
 import com.mycompany.proyectoempresariales.Modelo.Alcoholica;
 import javax.swing.JOptionPane;
 
@@ -12,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author andre
  */
-public class GUIEliminarAlcohol extends javax.swing.JFrame {
+public class GUIEliminarAlcohol extends javax.swing.JFrame implements IGuiCambiable{
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIEliminarAlcohol.class.getName());
     private Alcoholica G;
@@ -23,6 +24,7 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame {
     public GUIEliminarAlcohol() {
         initComponents();
         setLocationRelativeTo(this);
+        GuiService.registrarGUI(this);
     }
 
     /**
@@ -234,19 +236,20 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEstadoActionPerformed
 
-    //Cambio Camila (Eliminar)
+   
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+                                         
         int Codigo = Integer.parseInt(txtCodigo.getText());
-        
+         Alcoholica G = (Alcoholica) BebidaService.BuscarBebida(Codigo);
         if( G != null){
             BebidaService.EliminardelSistema(Codigo); //Botón eliminar alcohol
             llenardatos(G);
             JOptionPane.showMessageDialog(this, "Licor eliminado correctamente");
         }else{
             JOptionPane.showMessageDialog(this, "Licor no existente");
-        }
+  
         
-
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
@@ -305,5 +308,10 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame {
         txtPrecioVenta.setText(String.valueOf(g.calcularValorFinal()));
         txtGananciaAprox.setText(String.valueOf(Ganancia));
         txtEstado.setText(g.getEstado());
+    }
+
+    @Override
+    public void cambio() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
