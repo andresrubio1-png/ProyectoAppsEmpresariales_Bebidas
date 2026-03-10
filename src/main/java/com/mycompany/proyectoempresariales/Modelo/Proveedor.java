@@ -41,7 +41,7 @@ public class Proveedor {
     }
 
     // ===============================
-    // OPERACIONES SOBRE PROVEEDORES
+    // OPERACIONES SOBRE PROVEEDORESS
     // ===============================
 
     // Crear proveedor
