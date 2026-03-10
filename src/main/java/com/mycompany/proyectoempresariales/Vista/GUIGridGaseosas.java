@@ -5,6 +5,7 @@
 package com.mycompany.proyectoempresariales.Vista;
 
 import com.mycompany.proyectoempresariales.Controlador.BebidaService;
+import com.mycompany.proyectoempresariales.Controlador.GuiService;
 import com.mycompany.proyectoempresariales.Modelo.Bebida;
 import com.mycompany.proyectoempresariales.Modelo.Gaseosa;
 import java.util.List;
@@ -24,6 +25,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
     public GUIGridGaseosas() {
         initComponents();
         setLocationRelativeTo(this);
+        GuiService.registrarGUI(this);
     }
 
     /**
@@ -42,6 +44,11 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("C");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jTable1.setBackground(new java.awt.Color(229, 243, 239));
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -98,7 +105,16 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnListarGaseosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarGaseosaActionPerformed
+      getValues();
+    }//GEN-LAST:event_btnListarGaseosaActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
+        GuiService.eliminarGUI(this);
+    }//GEN-LAST:event_formWindowClosed
+
+    private void getValues(){
+          // TODO add your handling code here:
         List<Gaseosa> lista = BebidaService.listarGaseosas();
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
@@ -116,8 +132,8 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
                 b.getFechaVencimiento()
             });
         }
-    }//GEN-LAST:event_btnListarGaseosaActionPerformed
-
+        
+    }
     /**
      * @param args the command line arguments
      */
@@ -132,6 +148,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
 
     @Override
     public void cambio() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        getValues();
+        
     }
 }
