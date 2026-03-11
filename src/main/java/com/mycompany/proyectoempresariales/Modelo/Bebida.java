@@ -18,7 +18,7 @@ public abstract class Bebida {
     private int Stock;
     private double CantidadAzucar;
     private String TipoEnvase;
-    private Date FechaVencimiento;
+    private Date FechaVencimiento; // Remplazar por localdatetime
     private String Estado;
 
     //Constructor
