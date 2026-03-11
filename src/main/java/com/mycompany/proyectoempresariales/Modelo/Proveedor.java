@@ -40,10 +40,9 @@ public class Proveedor {
         }
     }
 
-    // ===============================
-    // OPERACIONES SOBRE PROVEEDORESS
-    // ===============================
-
+    
+    // OPERACIONES SOBRE PROVEEDORES
+   
     // Crear proveedor
     public static void crearProveedor(Proveedor proveedor) {
         proveedores.add(proveedor);
