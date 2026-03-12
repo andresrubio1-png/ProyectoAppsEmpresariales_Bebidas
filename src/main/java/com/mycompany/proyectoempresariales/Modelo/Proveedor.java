@@ -16,7 +16,6 @@ public class Proveedor {
     private String Telefono;
     private List<Gaseosa> Gaseosas;
 
-    // Colección de proveedores
     private static List<Proveedor> proveedores = new ArrayList<>();
 
     public Proveedor(int Codigo, String Nombre, String Telefono) throws Exception {
@@ -33,28 +32,32 @@ public class Proveedor {
         this.Codigo = Codigo;
     }
 
-    // Agregar gaseosa al proveedor
     public void agregarGaseosa(Gaseosa gaseosa) {
         if (gaseosa != null) {
             Gaseosas.add(gaseosa);
         }
     }
 
-    
-    // OPERACIONES SOBRE PROVEEDORES
-   
-    // Crear proveedor
     public static void crearProveedor(Proveedor proveedor) {
         proveedores.add(proveedor);
     }
 
-    // Eliminar proveedor
     public static boolean eliminarProveedor(int codigo) {
         return proveedores.removeIf(p -> p.getCodigo() == codigo);
     }
 
-    // Listar proveedores
     public static List<Proveedor> listarProveedores() {
         return proveedores;
+    }
+    
+    
+
+    public static Proveedor buscarProveedor(int codigo) {
+        for (Proveedor p : proveedores) {
+            if (p.getCodigo() == codigo) {
+                return p;
+            }
+        }
+        return null;
     }
 }

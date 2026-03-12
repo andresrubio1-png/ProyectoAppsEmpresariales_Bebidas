@@ -32,6 +32,9 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator3 = new javax.swing.JSeparator();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
@@ -46,10 +49,21 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenuCalcularLicor = new javax.swing.JMenuItem();
         jMenuListarLicor = new javax.swing.JMenuItem();
         menuEliminar1 = new javax.swing.JMenuItem();
+        jMenuProveedor = new javax.swing.JMenu();
+        itemAgregarProveedor = new javax.swing.JMenuItem();
+        itemBuscarProveedor = new javax.swing.JMenuItem();
+        itemListarProveedor = new javax.swing.JMenuItem();
+        itemEliminarProveedor = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuBalance = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         mAcercaDe = new javax.swing.JMenuItem();
+
+        jMenu1.setText("File");
+        jMenuBar2.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar2.add(jMenu2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pantalla Principal");
@@ -106,6 +120,26 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenu4.add(menuEliminar1);
 
         jMenuBar1.add(jMenu4);
+
+        jMenuProveedor.setText("Proveedor");
+
+        itemAgregarProveedor.setText("Agregar Proveedor");
+        itemAgregarProveedor.addActionListener(this::itemAgregarProveedorActionPerformed);
+        jMenuProveedor.add(itemAgregarProveedor);
+
+        itemBuscarProveedor.setText("Buscar Proveedor");
+        itemBuscarProveedor.addActionListener(this::itemBuscarProveedorActionPerformed);
+        jMenuProveedor.add(itemBuscarProveedor);
+
+        itemListarProveedor.setText("Listar Proveedores");
+        itemListarProveedor.addActionListener(this::itemListarProveedorActionPerformed);
+        jMenuProveedor.add(itemListarProveedor);
+
+        itemEliminarProveedor.setText("Eliminar Proveedor");
+        itemEliminarProveedor.addActionListener(this::itemEliminarProveedorActionPerformed);
+        jMenuProveedor.add(itemEliminarProveedor);
+
+        jMenuBar1.add(jMenuProveedor);
 
         jMenu7.setText("Inventario");
 
@@ -213,23 +247,56 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         gui.setVisible(true);
     }//GEN-LAST:event_menuEliminar1ActionPerformed
 
+    private void itemBuscarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarProveedorActionPerformed
+        GUIBuscarProveedor gui = new GUIBuscarProveedor();
+    gui.setLocationRelativeTo(null);
+    gui.setVisible(true);
+    }//GEN-LAST:event_itemBuscarProveedorActionPerformed
+
+    private void itemListarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListarProveedorActionPerformed
+        GUIGridProveedores gui = new GUIGridProveedores();
+    gui.setLocationRelativeTo(null);
+    gui.setVisible(true);
+    }//GEN-LAST:event_itemListarProveedorActionPerformed
+
+    private void itemEliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEliminarProveedorActionPerformed
+        GUIEliminarProveedor gui = new GUIEliminarProveedor();
+    gui.setLocationRelativeTo(null);
+    gui.setVisible(true);
+    }//GEN-LAST:event_itemEliminarProveedorActionPerformed
+
+    private void itemAgregarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAgregarProveedorActionPerformed
+        GUIAgregarProveedor gui = new GUIAgregarProveedor();
+    gui.setLocationRelativeTo(null);
+    gui.setVisible(true);
+
+    }//GEN-LAST:event_itemAgregarProveedorActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMenuItemPrecioVentaGaseosa;
     private javax.swing.JMenuItem JMenuPrecioVentaLicores;
     private javax.swing.JMenuItem MenuItemGaseosaAdd;
     private javax.swing.JMenuItem MenuItemLicorAdd;
+    private javax.swing.JMenuItem itemAgregarProveedor;
+    private javax.swing.JMenuItem itemBuscarProveedor;
+    private javax.swing.JMenuItem itemEliminarProveedor;
+    private javax.swing.JMenuItem itemListarProveedor;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuItem jMenuBalance;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jMenuCalcularGas;
     private javax.swing.JMenuItem jMenuCalcularLicor;
     private javax.swing.JMenuItem jMenuListaGas;
     private javax.swing.JMenuItem jMenuListarLicor;
+    private javax.swing.JMenu jMenuProveedor;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JMenuItem mAcercaDe;
     private javax.swing.JMenuItem menuEliminar;
