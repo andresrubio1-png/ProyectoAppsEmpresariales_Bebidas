@@ -36,7 +36,7 @@ public class GUIBuscarProveedor extends javax.swing.JFrame {
         txtCodigoProveedor = new javax.swing.JTextField();
         btnBuscarProveedor = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTitulo.setText("Buscar Proveedor");
