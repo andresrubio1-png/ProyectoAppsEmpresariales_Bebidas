@@ -9,7 +9,7 @@ import lombok.Data;
 
 /**
  *
- * @author andre
+ * @author andres
  */
 @Data
 public class Alcoholica extends Bebida implements IFormulasAlcohol {
