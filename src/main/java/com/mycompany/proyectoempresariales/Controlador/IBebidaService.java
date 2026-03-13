@@ -15,7 +15,7 @@ import java.util.List;
  * @author andre
  */
 public interface IBebidaService {
-    public  Bebida addBebidas(Bebida bebida);
+    public  Bebida addBebidas(Bebida bebida) throws Exception;
     public Bebida BuscarBebida (int Codigo);
     public  List<Bebida> listarBebidas();
     public  List<Gaseosa> listarGaseosas();

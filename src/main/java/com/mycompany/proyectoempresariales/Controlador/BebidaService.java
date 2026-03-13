@@ -29,7 +29,12 @@ public class BebidaService implements IBebidaService {
 
     //Método de agregación 
     @Override
-    public Bebida addBebidas(Bebida bebida) {
+    public Bebida addBebidas(Bebida bebida) throws Exception {
+         for (Bebida b : Bebidas) {
+        if (b.getCodigo() == bebida.getCodigo()) {
+            throw new Exception("Ya existe una bebida con ese código");
+        }
+    }
         Bebidas.add(bebida);
         guiService.cambioEnGUI();
         return bebida;

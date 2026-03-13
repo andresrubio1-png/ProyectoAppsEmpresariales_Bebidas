@@ -46,7 +46,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
         btnListarGaseosa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("C");
+        setTitle("Grid Gaseosa");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
@@ -57,17 +57,20 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Codigo", "Tipo", "Nombre", "Precio Prod...", "Precio Venta", "Stock", "Estado", "Envase", "Fecha Vencimiento"
+                "Codigo", "Tipo", "Nombre", "Precio Prod...", "Precio Venta", "Stock", "Estado", "Envase", "Fecha Vencimiento", "Sabor", "Cant Gas"
             }
         ));
         jTable1.setGridColor(new java.awt.Color(0, 102, 102));
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("ACS DISTRIBUCIONES SAS");
@@ -121,7 +124,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
         List<Gaseosa> lista = bebidaService.listarGaseosas();
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
-        for (Bebida b : lista) {
+        for (Gaseosa b : lista) {
 
             modelo.addRow(new Object[]{
                 b.getCodigo(),
@@ -132,7 +135,9 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
                 b.getStock(),
                 b.getEstado(),
                 b.getTipoEnvase(),
-                b.getFechaVencimiento()
+                b.getFechaVencimiento(),
+                b.getSabor(),
+                b.getCantidadGas()
             });
         }
         
