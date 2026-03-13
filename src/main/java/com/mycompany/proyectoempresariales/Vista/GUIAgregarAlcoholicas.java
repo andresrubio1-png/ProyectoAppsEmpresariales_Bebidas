@@ -5,6 +5,7 @@
 package com.mycompany.proyectoempresariales.Vista;
 
 import com.mycompany.proyectoempresariales.Controlador.BebidaService;
+import com.mycompany.proyectoempresariales.Controlador.IBebidaService;
 import com.mycompany.proyectoempresariales.Modelo.Bebida;
 import com.mycompany.proyectoempresariales.Modelo.*;
 import java.text.SimpleDateFormat;
@@ -20,7 +21,7 @@ import javax.swing.text.MaskFormatter;
  * @author andre
  */
 public class GUIAgregarAlcoholicas extends javax.swing.JFrame {
-    
+    private IBebidaService bebidaService = BebidaService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIAgregarAlcoholicas.class.getName());
 
     /**
@@ -399,7 +400,7 @@ public class GUIAgregarAlcoholicas extends javax.swing.JFrame {
             Logger.getLogger(GUIAgregarAlcoholicas.class.getName()).log(Level.SEVERE, null, ex);
         }
         //Agregar a la coleccion
-        BebidaService.addBebidas(bebida);
+        bebidaService.addBebidas(bebida);
         JOptionPane.showMessageDialog(this, "Bebida Agregada");
     }//GEN-LAST:event_btnAgregarLicorActionPerformed
 
