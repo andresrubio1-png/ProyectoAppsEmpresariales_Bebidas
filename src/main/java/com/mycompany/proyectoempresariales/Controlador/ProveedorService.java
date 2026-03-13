@@ -1,13 +1,91 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.proyectoempresariales.Controlador;
+
+import com.mycompany.proyectoempresariales.Modelo.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author andre
  */
 public class ProveedorService implements IProveedorService {
-    
+
+    private static ProveedorService proveedorService; //Singleton
+    private IGuiService guiService = GuiService.getInstance();
+    private static List<Proveedor> Proveedores = new ArrayList();
+
+    private ProveedorService() {
+
+    }
+
+    public static ProveedorService getInstance() {
+        if (proveedorService == null) {
+            proveedorService = new ProveedorService();
+        }
+        return proveedorService;
+    }
+
+    @Override
+    public void agregarGaseosa(Gaseosa gaseosa, Proveedor proveedor) throws Exception {
+        if (gaseosa == null) {
+            throw new Exception("La gaseosa es null");
+        }
+
+        if (proveedor == null) {
+            throw new Exception("Proveedor no válido");
+        }
+        if (!proveedor.getGaseosas().contains(gaseosa)) {
+            proveedor.getGaseosas().add(gaseosa);
+        }
+        guiService.cambioEnGUI();
+    }
+
+    @Override
+    public void addProveedor(Proveedor proveedor) throws Exception {
+        for (Proveedor p : Proveedores) {
+            if (p.getCodigo() == proveedor.getCodigo()) {
+                throw new Exception("Ya existe un proveedor con ese código");
+            }
+        }
+        Proveedores.add(proveedor);
+        guiService.cambioEnGUI();
+    }
+
+    @Override
+    public void eliminarProveedor(Proveedor proveedor) {
+        proveedor.setEstado("Inactivo");
+        proveedor.getGaseosas().clear();
+        guiService.cambioEnGUI();
+    }
+
+    @Override
+    public List<Proveedor> listarProveedores() {
+        return Proveedores;
+    }
+
+    @Override
+    public Proveedor buscarProveedor(int codigo) {
+        for (Proveedor p : Proveedores) {
+            if (p.getCodigo() == codigo) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void updateProveedor(Proveedor proveedor, String nombre, String telefono,
+            String estado) {
+        proveedor.setNombre(nombre);
+        proveedor.setTelefono(telefono);
+        proveedor.setEstado(estado);
+        guiService.cambioEnGUI();
+    }
+
+    @Override
+    public void eliminarGaseosa(Proveedor proveedor, Gaseosa gaseosa) {
+        proveedor.getGaseosas().remove(gaseosa);
+        guiService.cambioEnGUI();
+    }
+
 }
