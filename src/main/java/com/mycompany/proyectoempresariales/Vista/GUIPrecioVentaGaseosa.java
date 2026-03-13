@@ -5,6 +5,7 @@
 package com.mycompany.proyectoempresariales.Vista;
 
 import com.mycompany.proyectoempresariales.Controlador.BebidaService;
+import com.mycompany.proyectoempresariales.Controlador.IBebidaService;
 import com.mycompany.proyectoempresariales.Modelo.Gaseosa;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -15,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * @author andre
  */
 public class GUIPrecioVentaGaseosa extends javax.swing.JFrame {
-    
+    private IBebidaService bebidaService = BebidaService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIPrecioVentaGaseosa.class.getName());
 
     /**
@@ -194,7 +195,7 @@ public class GUIPrecioVentaGaseosa extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int Codigo = Integer.parseInt(txtCodigo.getText());
-        Gaseosa G = (Gaseosa) BebidaService.BuscarBebida(Codigo);
+        Gaseosa G = (Gaseosa) bebidaService.BuscarBebida(Codigo);
         if(G!= null){
             llenardatos(G);
         }else
