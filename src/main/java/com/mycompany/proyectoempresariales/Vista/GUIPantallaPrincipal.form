@@ -47,6 +47,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JMenuItemPrecioVentaGaseosaActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuActualizarGas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Actualizar Gaseosa"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuActualizarGasActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuCalcularGas">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Calcular Precio"/>

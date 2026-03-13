@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author andre
  */
 public class GUIPantallaPrincipal extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIPantallaPrincipal.class.getName());
 
     /**
@@ -40,6 +40,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         MenuItemGaseosaAdd = new javax.swing.JMenuItem();
         JMenuItemPrecioVentaGaseosa = new javax.swing.JMenuItem();
+        jMenuActualizarGas = new javax.swing.JMenuItem();
         jMenuCalcularGas = new javax.swing.JMenuItem();
         jMenuListaGas = new javax.swing.JMenuItem();
         menuEliminar = new javax.swing.JMenuItem();
@@ -82,6 +83,10 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         JMenuItemPrecioVentaGaseosa.setToolTipText("");
         JMenuItemPrecioVentaGaseosa.addActionListener(this::JMenuItemPrecioVentaGaseosaActionPerformed);
         jMenu3.add(JMenuItemPrecioVentaGaseosa);
+
+        jMenuActualizarGas.setText("Actualizar Gaseosa");
+        jMenuActualizarGas.addActionListener(this::jMenuActualizarGasActionPerformed);
+        jMenu3.add(jMenuActualizarGas);
 
         jMenuCalcularGas.setText("Calcular Precio");
         jMenuCalcularGas.addActionListener(this::jMenuCalcularGasActionPerformed);
@@ -181,23 +186,23 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuItemGaseosaAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemGaseosaAddActionPerformed
-       GUIAgregarGaseosa gui = new GUIAgregarGaseosa();
-       gui.setVisible(true);
+        GUIAgregarGaseosa gui = new GUIAgregarGaseosa();
+        gui.setVisible(true);
     }//GEN-LAST:event_MenuItemGaseosaAddActionPerformed
 
     private void MenuItemLicorAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemLicorAddActionPerformed
-       GUIAgregarAlcoholicas gui = new GUIAgregarAlcoholicas();
-       gui.setVisible(true);
+        GUIAgregarAlcoholicas gui = new GUIAgregarAlcoholicas();
+        gui.setVisible(true);
     }//GEN-LAST:event_MenuItemLicorAddActionPerformed
 
     private void JMenuItemPrecioVentaGaseosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuItemPrecioVentaGaseosaActionPerformed
-       GUIBuscarGaseosa gui = new GUIBuscarGaseosa();
-       gui.setVisible(true);
+        GUIBuscarGaseosa gui = new GUIBuscarGaseosa();
+        gui.setVisible(true);
     }//GEN-LAST:event_JMenuItemPrecioVentaGaseosaActionPerformed
 
     private void JMenuPrecioVentaLicoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMenuPrecioVentaLicoresActionPerformed
-      GUIBuscarAlcohol gui = new GUIBuscarAlcohol();
-      gui.setVisible(true);
+        GUIBuscarAlcohol gui = new GUIBuscarAlcohol();
+        gui.setVisible(true);
     }//GEN-LAST:event_JMenuPrecioVentaLicoresActionPerformed
 
     private void jMenuBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuBalanceActionPerformed
@@ -249,28 +254,35 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
 
     private void itemBuscarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarProveedorActionPerformed
         GUIBuscarProveedor gui = new GUIBuscarProveedor();
-    gui.setLocationRelativeTo(null);
-    gui.setVisible(true);
+        gui.setLocationRelativeTo(null);
+        gui.setVisible(true);
     }//GEN-LAST:event_itemBuscarProveedorActionPerformed
 
     private void itemListarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListarProveedorActionPerformed
         GUIGridProveedores gui = new GUIGridProveedores();
-    gui.setLocationRelativeTo(null);
-    gui.setVisible(true);
+        gui.setLocationRelativeTo(null);
+        gui.setVisible(true);
     }//GEN-LAST:event_itemListarProveedorActionPerformed
 
     private void itemEliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEliminarProveedorActionPerformed
         GUIEliminarProveedor gui = new GUIEliminarProveedor();
-    gui.setLocationRelativeTo(null);
-    gui.setVisible(true);
+        gui.setLocationRelativeTo(null);
+        gui.setVisible(true);
     }//GEN-LAST:event_itemEliminarProveedorActionPerformed
 
     private void itemAgregarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAgregarProveedorActionPerformed
         GUIAgregarProveedor gui = new GUIAgregarProveedor();
-    gui.setLocationRelativeTo(null);
-    gui.setVisible(true);
+        gui.setLocationRelativeTo(null);
+        gui.setVisible(true);
 
     }//GEN-LAST:event_itemAgregarProveedorActionPerformed
+
+    private void jMenuActualizarGasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuActualizarGasActionPerformed
+        // TODO add your handling code here:
+        GUIActualizarGaseosa gui = new GUIActualizarGaseosa();
+        gui.setLocationRelativeTo(null);
+        gui.setVisible(true);
+    }//GEN-LAST:event_jMenuActualizarGasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -289,6 +301,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenuItem jMenuActualizarGas;
     private javax.swing.JMenuItem jMenuBalance;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;

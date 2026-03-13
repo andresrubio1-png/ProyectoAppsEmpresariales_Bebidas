@@ -7,6 +7,7 @@ package com.mycompany.proyectoempresariales.Controlador;
 import com.mycompany.proyectoempresariales.Modelo.Alcoholica;
 import com.mycompany.proyectoempresariales.Modelo.Bebida;
 import com.mycompany.proyectoempresariales.Modelo.Gaseosa;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,6 +20,8 @@ public interface IBebidaService {
     public  List<Bebida> listarBebidas();
     public  List<Gaseosa> listarGaseosas();
     public  List<Alcoholica> listarLicores();
+    public Bebida actualizarBebida(int Codigo, String Nombre, double Volumen, double Precio,
+            int Stock, double CantidadAzucar, String TipoEnvase, Date FechaVencimiento, String Estado) throws Exception;
     public  void eliminardelSistema(Bebida b);
     public  double ganancia(Bebida b);
 }
