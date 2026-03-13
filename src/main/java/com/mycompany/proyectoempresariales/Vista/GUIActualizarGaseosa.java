@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author andre
+ * @author andres
  */
 public class GUIActualizarGaseosa extends javax.swing.JFrame {
     private IGuiService guiService = GuiService.getInstance();
