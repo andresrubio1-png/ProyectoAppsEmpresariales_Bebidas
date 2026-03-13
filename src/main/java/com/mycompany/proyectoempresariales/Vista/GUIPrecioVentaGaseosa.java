@@ -203,7 +203,7 @@ public class GUIPrecioVentaGaseosa extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     void llenardatos(Gaseosa g){
-        double Ganancia = BebidaService.ganancia(g);
+        double Ganancia = bebidaService.ganancia(g);
         txtCodigo.setText(String.valueOf(g.getCodigo()));
         txtNombre.setText(g.getNombre());
         txtPrecioProduccion.setText(String.valueOf(g.getPrecioProduccion()));

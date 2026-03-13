@@ -226,7 +226,7 @@ public class GUIPrecioVentaLicor extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void llenardatos(Alcoholica g) {
-       double Ganancia = BebidaService.ganancia(g);
+       double Ganancia = bebidaService.ganancia(g);
         txtCodigo.setText(String.valueOf(g.getCodigo()));
         txtNombre.setText(g.getNombre());
         txtPrecioProduccion.setText(String.valueOf(g.getPrecioProduccion()));

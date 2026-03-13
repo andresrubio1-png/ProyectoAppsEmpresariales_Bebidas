@@ -238,7 +238,7 @@ public class GUIEliminarGaseosa extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStockActionPerformed
     void llenardatos(Gaseosa g){
-        double Ganancia = BebidaService.ganancia(g);
+        double Ganancia = bebidaService.ganancia(g);
         txtCodigo.setText(String.valueOf(g.getCodigo()));
         txtNombre.setText(g.getNombre());
         txtPrecioProduccion.setText(String.valueOf(g.getPrecioProduccion()));
