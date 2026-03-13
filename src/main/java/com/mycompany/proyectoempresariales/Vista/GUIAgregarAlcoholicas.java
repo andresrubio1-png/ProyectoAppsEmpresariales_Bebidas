@@ -21,6 +21,7 @@ import javax.swing.text.MaskFormatter;
  * @author andre
  */
 public class GUIAgregarAlcoholicas extends javax.swing.JFrame {
+
     private IBebidaService bebidaService = BebidaService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIAgregarAlcoholicas.class.getName());
 
@@ -32,6 +33,7 @@ public class GUIAgregarAlcoholicas extends javax.swing.JFrame {
         setLocationRelativeTo(this);
         configurarCampoFecha();
     }
+
     private void configurarCampoFecha() {
         try {
             MaskFormatter formato = new MaskFormatter("##/##/####");
@@ -43,6 +45,7 @@ public class GUIAgregarAlcoholicas extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -390,18 +393,20 @@ public class GUIAgregarAlcoholicas extends javax.swing.JFrame {
         String LoteProduccion = txtLoteProduccion.getText();
         double porcentajeAlcohol = Double.parseDouble(txtPorAlcohol.getText());
         //Crear Bebida Alcoholica
-        try{
+        try {
             bebida = new Alcoholica(
-                porcentajeAlcohol, TipoLicor, LoteProduccion,
-                Codigo, Nombre, Volumen, PrecioProd, Stock,
-                cantAzucar, TipoEnvase, fechaVencimiento,
-                Estado);
-        }catch (Exception ex) {
+                    porcentajeAlcohol, TipoLicor, LoteProduccion,
+                    Codigo, Nombre, Volumen, PrecioProd, Stock,
+                    cantAzucar, TipoEnvase, fechaVencimiento,
+                    Estado);
+            //Agregar a la coleccion
+            bebidaService.addBebidas(bebida);
+            JOptionPane.showMessageDialog(this, "Bebida Agregada");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error al agregar, intente de nuevo");
             Logger.getLogger(GUIAgregarAlcoholicas.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //Agregar a la coleccion
-        bebidaService.addBebidas(bebida);
-        JOptionPane.showMessageDialog(this, "Bebida Agregada");
+
     }//GEN-LAST:event_btnAgregarLicorActionPerformed
 
     private void txtVolumenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVolumenActionPerformed
@@ -423,7 +428,6 @@ public class GUIAgregarAlcoholicas extends javax.swing.JFrame {
     private void txtPrecioProduccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioProduccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioProduccionActionPerformed
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

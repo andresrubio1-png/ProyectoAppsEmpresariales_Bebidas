@@ -20,6 +20,7 @@ import javax.swing.text.MaskFormatter;
  * @author andre
  */
 public class GUIAgregarGaseosa extends javax.swing.JFrame {
+
     private IBebidaService bebidaService = BebidaService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIAgregarGaseosa.class.getName());
 
@@ -410,20 +411,20 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
         int Calorias = Integer.parseInt(txtCalorias.getText());
         boolean Retornable = "SI".equals(CbRetornable.getSelectedItem());
         //Crear Gaseosa
-        try{
+        try {
             bebida = new Gaseosa(
-                cantGas, Sabor, Calorias, Retornable,
-                Codigo, Nombre, Volumen, PrecioProd, Stock,
-                cantAzucar, TipoEnvase, fechaVencimiento,
-                Estado);
-        }catch (Exception ex) {
+                    cantGas, Sabor, Calorias, Retornable,
+                    Codigo, Nombre, Volumen, PrecioProd, Stock,
+                    cantAzucar, TipoEnvase, fechaVencimiento,
+                    Estado);
+            //Agregar a la coleccion
+            bebidaService.addBebidas(bebida);
+            JOptionPane.showMessageDialog(this, "Bebida Agregada");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error al agregar, intente de nuevo");
             Logger.getLogger(GUIAgregarGaseosa.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //Agregar a la coleccion
-        bebidaService.addBebidas(bebida);
-        JOptionPane.showMessageDialog(this, "Bebida Agregada");
-        
-        
+       
 
 
     }//GEN-LAST:event_btnAgregarGaseosaActionPerformed
@@ -447,7 +448,6 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CbRetornable;
