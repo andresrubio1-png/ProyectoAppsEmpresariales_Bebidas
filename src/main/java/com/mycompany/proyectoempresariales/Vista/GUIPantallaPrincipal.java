@@ -47,6 +47,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         MenuItemLicorAdd = new javax.swing.JMenuItem();
         JMenuPrecioVentaLicores = new javax.swing.JMenuItem();
+        jMenuActualizarLicor = new javax.swing.JMenuItem();
         jMenuCalcularLicor = new javax.swing.JMenuItem();
         jMenuListarLicor = new javax.swing.JMenuItem();
         menuEliminar1 = new javax.swing.JMenuItem();
@@ -111,6 +112,10 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         JMenuPrecioVentaLicores.setText("Buscar Licores");
         JMenuPrecioVentaLicores.addActionListener(this::JMenuPrecioVentaLicoresActionPerformed);
         jMenu4.add(JMenuPrecioVentaLicores);
+
+        jMenuActualizarLicor.setText("Actualizar Licor");
+        jMenuActualizarLicor.addActionListener(this::jMenuActualizarLicorActionPerformed);
+        jMenu4.add(jMenuActualizarLicor);
 
         jMenuCalcularLicor.setText("Calcular Precio");
         jMenuCalcularLicor.addActionListener(this::jMenuCalcularLicorActionPerformed);
@@ -284,6 +289,13 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         gui.setVisible(true);
     }//GEN-LAST:event_jMenuActualizarGasActionPerformed
 
+    private void jMenuActualizarLicorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuActualizarLicorActionPerformed
+        // TODO add your handling code here:
+        GUIActualizarAlcoholicas gui = new GUIActualizarAlcoholicas();
+        gui.setLocationRelativeTo(null);
+        gui.setVisible(true);
+    }//GEN-LAST:event_jMenuActualizarLicorActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMenuItemPrecioVentaGaseosa;
@@ -302,6 +314,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuItem jMenuActualizarGas;
+    private javax.swing.JMenuItem jMenuActualizarLicor;
     private javax.swing.JMenuItem jMenuBalance;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;

@@ -18,6 +18,7 @@ com\mycompany\proyectoempresariales\Controlador\BebidaService.class
 com\mycompany\proyectoempresariales\Vista\GUIBuscarAlcoholResult.class
 com\mycompany\proyectoempresariales\Vista\GUIEliminarGaseosa.class
 com\mycompany\proyectoempresariales\Vista\GUIGridProveedores.class
+com\mycompany\proyectoempresariales\Controlador\IProveedorService.class
 com\mycompany\proyectoempresariales\Modelo\Gaseosa.class
 com\mycompany\proyectoempresariales\Controlador\IBebidaService.class
 main.class
@@ -26,6 +27,7 @@ com\mycompany\proyectoempresariales\Vista\IGuiCambiable.class
 com\mycompany\proyectoempresariales\Vista\GUIGridGaseosas.class
 com\mycompany\proyectoempresariales\Vista\GUIBuscarProveedor.class
 com\mycompany\proyectoempresariales\Controlador\IGuiService.class
+com\mycompany\proyectoempresariales\Controlador\ProveedorService.class
 com\mycompany\proyectoempresariales\Vista\GUIAgregarAlcoholicas.class
 com\mycompany\proyectoempresariales\Vista\GUIMostrarBalance.class
 com\mycompany\proyectoempresariales\Vista\GUIPrecioVentaGaseosa.class
