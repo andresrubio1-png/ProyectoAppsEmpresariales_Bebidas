@@ -10,7 +10,7 @@ import java.util.List;
  * //PRUEBA NUMERO TRES OMG
  * PRUEBA CUATRO GG
  */
-public class BebidaService {
+public class BebidaService implements IBebidaService{
 
     //Creacion de la coleccion de bebidas disponibles a despacho
     private static BebidaService bebidaService; //Singleton
@@ -26,14 +26,16 @@ public class BebidaService {
     }
     
     //Método de agregación 
-    public static Bebida addBebidas(Bebida bebida){
+    @Override
+    public  Bebida addBebidas(Bebida bebida){
         Bebidas.add(bebida);
         GuiService.cambioEnGUI();
         return bebida;
     }
 
     //Metodo de busqueda general
-    public static Bebida BuscarBebida(int Codigo){
+    @Override
+    public  Bebida BuscarBebida(int Codigo){
         for(Bebida b: Bebidas){
             if(b.getCodigo()== Codigo)
                 return b;
@@ -42,12 +44,14 @@ public class BebidaService {
     }
 
     //Metodo de listar TODO
-    public static List<Bebida> listarBebidas(){
+    @Override
+    public  List<Bebida> listarBebidas(){
         return Bebidas;
     }
 
     //Metodo de listar SOLO GASEOSAS
-    public static List<Gaseosa> listarGaseosas(){
+    @Override
+    public  List<Gaseosa> listarGaseosas(){
         List<Gaseosa> gaseosas = new ArrayList();
         for(Bebida b: Bebidas){
             if(b instanceof Gaseosa){
@@ -58,7 +62,8 @@ public class BebidaService {
     }
 
     //Metodo de listar SOLO LICORES
-    public static List<Alcoholica> listarLicores(){
+    @Override
+    public  List<Alcoholica> listarLicores(){
         List<Alcoholica> alcoholica = new ArrayList();
         for(Bebida b: Bebidas){
             if(b instanceof Alcoholica){
@@ -69,7 +74,8 @@ public class BebidaService {
     }
 
     //Metodo de eliminacion del sistema
-    public static void EliminardelSistema(Bebida b){
+    @Override
+    public  void eliminardelSistema(Bebida b){
             b.setStock(0);
             b.setEstado("No disponible");
             GuiService.cambioEnGUI();
