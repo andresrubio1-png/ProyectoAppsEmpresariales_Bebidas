@@ -20,4 +20,5 @@ public interface IBebidaService {
     public  List<Gaseosa> listarGaseosas();
     public  List<Alcoholica> listarLicores();
     public  void eliminardelSistema(Bebida b);
+    public  double ganancia(Bebida b);
 }

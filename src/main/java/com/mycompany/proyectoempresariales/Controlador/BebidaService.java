@@ -83,7 +83,8 @@ public class BebidaService implements IBebidaService{
     }
 
     //Calcular Ganancia de venta x Stock
-    public static double ganancia(Bebida b){
+    @Override
+    public  double ganancia(Bebida b){
         double Ganancia = 0;
         Ganancia = b.calcularValorFinal()*b.getStock();
         return Ganancia;
