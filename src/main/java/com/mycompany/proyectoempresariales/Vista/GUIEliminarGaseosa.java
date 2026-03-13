@@ -5,6 +5,7 @@
 package com.mycompany.proyectoempresariales.Vista;
 
 import com.mycompany.proyectoempresariales.Controlador.BebidaService;
+import com.mycompany.proyectoempresariales.Controlador.IBebidaService;
 import com.mycompany.proyectoempresariales.Modelo.Gaseosa;
 import javax.swing.JOptionPane;
 
@@ -13,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author andre
  */
 public class GUIEliminarGaseosa extends javax.swing.JFrame {
-    
+    private IBebidaService bebidaService = BebidaService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIEliminarGaseosa.class.getName());
 
     /**
@@ -250,7 +251,7 @@ public class GUIEliminarGaseosa extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int Codigo = Integer.parseInt(txtCodigo.getText());
-        Gaseosa G = (Gaseosa) BebidaService.BuscarBebida(Codigo);
+        Gaseosa G = (Gaseosa) bebidaService.BuscarBebida(Codigo);
         if(G!= null){
             llenardatos(G);
         }else
@@ -261,9 +262,9 @@ public class GUIEliminarGaseosa extends javax.swing.JFrame {
     //Cambio Camila (Eliminar)
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int Codigo = Integer.parseInt(txtCodigo.getText());
-        Gaseosa G = (Gaseosa) BebidaService.BuscarBebida(Codigo);
+        Gaseosa G = (Gaseosa) bebidaService.BuscarBebida(Codigo);
         if(G != null){
-            BebidaService.EliminardelSistema(G); //Botón eliminar gaseosa
+            bebidaService.eliminardelSistema(G); //Botón eliminar gaseosa
             llenardatos((Gaseosa) G);
             JOptionPane.showMessageDialog(this, "Gaseosa eliminada correctamente");
         }else{

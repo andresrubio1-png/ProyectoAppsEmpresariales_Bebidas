@@ -6,6 +6,7 @@ package com.mycompany.proyectoempresariales.Vista;
 
 import com.mycompany.proyectoempresariales.Controlador.BebidaService;
 import com.mycompany.proyectoempresariales.Controlador.GuiService;
+import com.mycompany.proyectoempresariales.Controlador.IBebidaService;
 import com.mycompany.proyectoempresariales.Modelo.Alcoholica;
 import javax.swing.JOptionPane;
 
@@ -14,7 +15,7 @@ import javax.swing.JOptionPane;
  * @author andre
  */
 public class GUIEliminarAlcohol extends javax.swing.JFrame {
-    
+    private IBebidaService bebidaService = BebidaService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIEliminarAlcohol.class.getName());
     private Alcoholica G;
 
@@ -222,7 +223,7 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int Codigo = Integer.parseInt(txtCodigo.getText());
-        Alcoholica A = (Alcoholica) BebidaService.BuscarBebida(Codigo);
+        Alcoholica A = (Alcoholica) bebidaService.BuscarBebida(Codigo);
         if(A!= null){
             llenardatos(A);
         }
@@ -240,9 +241,9 @@ public class GUIEliminarAlcohol extends javax.swing.JFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
                                          
         int Codigo = Integer.parseInt(txtCodigo.getText());
-         Alcoholica G = (Alcoholica) BebidaService.BuscarBebida(Codigo);
+         Alcoholica G = (Alcoholica) bebidaService.BuscarBebida(Codigo);
         if( G != null){
-            BebidaService.EliminardelSistema(G); //Botón eliminar alcohol
+            bebidaService.eliminardelSistema(G); 
             llenardatos(G);
             JOptionPane.showMessageDialog(this, "Licor eliminado correctamente");
         }else{

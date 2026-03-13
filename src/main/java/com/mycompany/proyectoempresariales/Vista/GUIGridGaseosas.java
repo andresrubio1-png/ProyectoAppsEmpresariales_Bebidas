@@ -6,6 +6,7 @@ package com.mycompany.proyectoempresariales.Vista;
 
 import com.mycompany.proyectoempresariales.Controlador.BebidaService;
 import com.mycompany.proyectoempresariales.Controlador.GuiService;
+import com.mycompany.proyectoempresariales.Controlador.IBebidaService;
 import com.mycompany.proyectoempresariales.Modelo.Bebida;
 import com.mycompany.proyectoempresariales.Modelo.Gaseosa;
 import java.util.List;
@@ -16,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  * @author andre
  */
 public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable{
-    
+    private IBebidaService bebidaService = BebidaService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIGridGaseosas.class.getName());
 
     /**
@@ -115,7 +116,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
 
     private void getValues(){
           // TODO add your handling code here:
-        List<Gaseosa> lista = BebidaService.listarGaseosas();
+        List<Gaseosa> lista = bebidaService.listarGaseosas();
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
         for (Bebida b : lista) {

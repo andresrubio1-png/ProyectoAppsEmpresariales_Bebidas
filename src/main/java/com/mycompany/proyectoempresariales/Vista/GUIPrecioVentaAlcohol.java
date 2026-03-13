@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  * @author andre
  */
 public class GUIPrecioVentaAlcohol extends javax.swing.JFrame {
-
+    private IBebidaService bebidaService = BebidaService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIPrecioVentaAlcohol.class.getName());
 
     /**
@@ -125,7 +125,7 @@ public class GUIPrecioVentaAlcohol extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        List<Alcoholica> lista = BebidaService.listarLicores();
+        List<Alcoholica> lista = bebidaService.listarLicores();
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
         for (Alcoholica a : lista) {

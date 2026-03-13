@@ -5,6 +5,7 @@
 package com.mycompany.proyectoempresariales.Vista;
 
 import com.mycompany.proyectoempresariales.Controlador.BebidaService;
+import com.mycompany.proyectoempresariales.Controlador.IBebidaService;
 import com.mycompany.proyectoempresariales.Modelo.Bebida;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -14,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  * @author andre
  */
 public class GUIMostrarBalance extends javax.swing.JFrame {
-    
+    private IBebidaService bebidaService = BebidaService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIMostrarBalance.class.getName());
 
     /**
@@ -112,7 +113,7 @@ public class GUIMostrarBalance extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarBalanceActionPerformed
-        List<Bebida> lista = BebidaService.listarBebidas();
+        List<Bebida> lista = bebidaService.listarBebidas();
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
         for (Bebida b : lista) {
