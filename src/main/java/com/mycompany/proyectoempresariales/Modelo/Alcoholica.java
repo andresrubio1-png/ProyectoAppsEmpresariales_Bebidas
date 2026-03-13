@@ -9,7 +9,8 @@ import lombok.Data;
 
 /**
  *
- * @author andres
+ * @author Andres 
+ * Prueba numero God knows
  */
 @Data
 public class Alcoholica extends Bebida implements IFormulasAlcohol {
