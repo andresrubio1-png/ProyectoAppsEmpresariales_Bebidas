@@ -14,6 +14,7 @@ public class BebidaService implements IBebidaService{
 
     //Creacion de la coleccion de bebidas disponibles a despacho
     private static BebidaService bebidaService; //Singleton
+    private IGuiService guiService = GuiService.getInstance();
     private static List<Bebida> Bebidas = new ArrayList(); 
     private BebidaService(){
     
@@ -29,7 +30,7 @@ public class BebidaService implements IBebidaService{
     @Override
     public  Bebida addBebidas(Bebida bebida){
         Bebidas.add(bebida);
-        GuiService.cambioEnGUI();
+        guiService.cambioEnGUI();
         return bebida;
     }
 
@@ -78,7 +79,7 @@ public class BebidaService implements IBebidaService{
     public  void eliminardelSistema(Bebida b){
             b.setStock(0);
             b.setEstado("No disponible");
-            GuiService.cambioEnGUI();
+            guiService.cambioEnGUI();
         
     }
 

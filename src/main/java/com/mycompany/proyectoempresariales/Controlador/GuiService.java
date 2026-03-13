@@ -12,18 +12,29 @@ import java.util.List;
  *
  * @author andre
  */
-public class GuiService {
-    private static List <IGuiCambiable> guis = new ArrayList<>();
+public class GuiService implements IGuiService{
+    private static GuiService guiService; //Singleton
+    private  List <IGuiCambiable> guis = new ArrayList<>();
+    private GuiService(){
     
-    public static void registrarGUI(IGuiCambiable gui){
-        guis.add(gui);
+    }
+    public static GuiService getInstance(){
+        if(guiService == null){
+            guiService = new GuiService();
+        }
+        return guiService;
     }
     
-    public static void eliminarGUI(IGuiCambiable gui){
+    @Override
+    public  void registrarGUI(IGuiCambiable gui){
+        guis.add(gui);
+    }
+    @Override
+    public  void eliminarGUI(IGuiCambiable gui){
         guis.remove(gui);
     } 
-    
-   public static void cambioEnGUI(){
+    @Override
+   public  void cambioEnGUI(){
         for(IGuiCambiable gui : guis){
             gui.cambio();
         }

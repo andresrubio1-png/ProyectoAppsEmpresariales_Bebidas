@@ -7,6 +7,7 @@ package com.mycompany.proyectoempresariales.Vista;
 import com.mycompany.proyectoempresariales.Controlador.BebidaService;
 import com.mycompany.proyectoempresariales.Controlador.GuiService;
 import com.mycompany.proyectoempresariales.Controlador.IBebidaService;
+import com.mycompany.proyectoempresariales.Controlador.IGuiService;
 import com.mycompany.proyectoempresariales.Modelo.Bebida;
 import com.mycompany.proyectoempresariales.Modelo.Gaseosa;
 import java.util.List;
@@ -18,6 +19,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable{
     private IBebidaService bebidaService = BebidaService.getInstance();
+    private IGuiService guiService = GuiService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIGridGaseosas.class.getName());
 
     /**
@@ -26,7 +28,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
     public GUIGridGaseosas() {
         initComponents();
         setLocationRelativeTo(this);
-        GuiService.registrarGUI(this);
+        guiService.registrarGUI(this);
     }
 
     /**
@@ -111,7 +113,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
-        GuiService.eliminarGUI(this);
+        guiService.eliminarGUI(this);
     }//GEN-LAST:event_formWindowClosed
 
     private void getValues(){
