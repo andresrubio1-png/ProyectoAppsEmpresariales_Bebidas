@@ -9,7 +9,7 @@ import java.util.List;
  * @author andre
  */
 public class ProveedorService implements IProveedorService {
-    
+
     private static ProveedorService proveedorService; //Singleton
     private IGuiService guiService = GuiService.getInstance();
     private static List<Proveedor> Proveedores = new ArrayList();
@@ -75,6 +75,10 @@ public class ProveedorService implements IProveedorService {
     @Override
     public void eliminarProveedor(Proveedor proveedor) {
         proveedor.setEstado("Inactivo");
+        for (Gaseosa g : proveedor.getGaseosas()) {
+            g.setEstado("Sin proveedor");
+            g.setStock(0);
+        }
         proveedor.getGaseosas().clear();
         guiService.cambioEnGUI();
     }
@@ -103,10 +107,5 @@ public class ProveedorService implements IProveedorService {
         guiService.cambioEnGUI();
     }
 
-    @Override
-    public void eliminarGaseosa(Proveedor proveedor, Gaseosa gaseosa) {
-        proveedor.getGaseosas().remove(gaseosa);
-        guiService.cambioEnGUI();
-    }
 
 }

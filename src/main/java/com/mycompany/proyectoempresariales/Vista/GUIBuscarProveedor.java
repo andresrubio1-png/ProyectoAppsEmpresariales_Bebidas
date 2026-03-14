@@ -25,6 +25,7 @@ public class GUIBuscarProveedor extends javax.swing.JFrame {
      */
     public GUIBuscarProveedor() {
         initComponents();
+        setLocationRelativeTo(this);
     }
 
     /**

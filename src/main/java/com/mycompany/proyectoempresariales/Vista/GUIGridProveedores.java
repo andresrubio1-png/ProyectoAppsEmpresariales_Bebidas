@@ -48,7 +48,7 @@ public class GUIGridProveedores extends javax.swing.JFrame implements IGuiCambia
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Lista de Proveedores");
 
-        tblProveedores.setBackground(new java.awt.Color(246, 246, 232));
+        tblProveedores.setBackground(new java.awt.Color(255, 255, 239));
         tblProveedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},

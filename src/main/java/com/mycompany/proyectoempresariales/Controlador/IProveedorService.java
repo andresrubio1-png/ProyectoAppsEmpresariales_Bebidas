@@ -17,7 +17,6 @@ public interface IProveedorService {
     public  void addProveedor(Proveedor proveedor) throws Exception;
     public void  updateProveedor(Proveedor proveedor,String nombre,String telefono,
         String estado);
-    public void eliminarGaseosa(Proveedor proveedor, Gaseosa gaseosa);
     public  void eliminarProveedor(Proveedor proveedor);
     public  List<Proveedor> listarProveedores();
     public  Proveedor buscarProveedor(int codigo);

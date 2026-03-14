@@ -51,14 +51,15 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenuCalcularLicor = new javax.swing.JMenuItem();
         jMenuListarLicor = new javax.swing.JMenuItem();
         menuEliminar1 = new javax.swing.JMenuItem();
-        jMenuProveedor = new javax.swing.JMenu();
-        itemAgregarProveedor = new javax.swing.JMenuItem();
-        jMenuAgregarGasProv = new javax.swing.JMenuItem();
-        itemBuscarProveedor = new javax.swing.JMenuItem();
-        itemListarProveedor = new javax.swing.JMenuItem();
-        itemEliminarProveedor = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuBalance = new javax.swing.JMenuItem();
+        jMenuProveedor = new javax.swing.JMenu();
+        itemAgregarProveedor = new javax.swing.JMenuItem();
+        itemBuscarProveedor = new javax.swing.JMenuItem();
+        jMenuActualizar = new javax.swing.JMenuItem();
+        jMenuAgregarGasProv = new javax.swing.JMenuItem();
+        itemListarProveedor = new javax.swing.JMenuItem();
+        itemEliminarProveedor = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         mAcercaDe = new javax.swing.JMenuItem();
 
@@ -132,19 +133,32 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMenu7.setText("Inventario");
+
+        jMenuBalance.setText("Mostrar Balance");
+        jMenuBalance.setToolTipText("");
+        jMenuBalance.addActionListener(this::jMenuBalanceActionPerformed);
+        jMenu7.add(jMenuBalance);
+
+        jMenuBar1.add(jMenu7);
+
         jMenuProveedor.setText("Proveedor");
 
         itemAgregarProveedor.setText("Agregar Proveedor");
         itemAgregarProveedor.addActionListener(this::itemAgregarProveedorActionPerformed);
         jMenuProveedor.add(itemAgregarProveedor);
 
-        jMenuAgregarGasProv.setText("Agregar Gaseosa a Proveedor");
-        jMenuAgregarGasProv.addActionListener(this::jMenuAgregarGasProvActionPerformed);
-        jMenuProveedor.add(jMenuAgregarGasProv);
-
         itemBuscarProveedor.setText("Buscar Proveedor");
         itemBuscarProveedor.addActionListener(this::itemBuscarProveedorActionPerformed);
         jMenuProveedor.add(itemBuscarProveedor);
+
+        jMenuActualizar.setText("Actualizar Proveedor");
+        jMenuActualizar.addActionListener(this::jMenuActualizarActionPerformed);
+        jMenuProveedor.add(jMenuActualizar);
+
+        jMenuAgregarGasProv.setText("Agregar Gaseosa a Proveedor");
+        jMenuAgregarGasProv.addActionListener(this::jMenuAgregarGasProvActionPerformed);
+        jMenuProveedor.add(jMenuAgregarGasProv);
 
         itemListarProveedor.setText("Listar Proveedores");
         itemListarProveedor.addActionListener(this::itemListarProveedorActionPerformed);
@@ -155,15 +169,6 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         jMenuProveedor.add(itemEliminarProveedor);
 
         jMenuBar1.add(jMenuProveedor);
-
-        jMenu7.setText("Inventario");
-
-        jMenuBalance.setText("Mostrar Balance");
-        jMenuBalance.setToolTipText("");
-        jMenuBalance.addActionListener(this::jMenuBalanceActionPerformed);
-        jMenu7.add(jMenuBalance);
-
-        jMenuBar1.add(jMenu7);
 
         jMenu8.setText("Ayuda");
 
@@ -307,6 +312,12 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         gui.setVisible(true);
     }//GEN-LAST:event_jMenuAgregarGasProvActionPerformed
 
+    private void jMenuActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuActualizarActionPerformed
+        GUIActualizarProveedorDatos gui = new GUIActualizarProveedorDatos();
+        gui.setLocationRelativeTo(null);
+        gui.setVisible(true);
+    }//GEN-LAST:event_jMenuActualizarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMenuItemPrecioVentaGaseosa;
@@ -324,6 +335,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenuItem jMenuActualizar;
     private javax.swing.JMenuItem jMenuActualizarGas;
     private javax.swing.JMenuItem jMenuActualizarLicor;
     private javax.swing.JMenuItem jMenuAgregarGasProv;

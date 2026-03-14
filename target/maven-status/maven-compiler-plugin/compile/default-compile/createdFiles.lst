@@ -5,6 +5,7 @@ com\mycompany\proyectoempresariales\Vista\GUIPrecioVentaLicor.class
 com\mycompany\proyectoempresariales\Modelo\IFormulasAlcohol.class
 com\mycompany\proyectoempresariales\Vista\GUIAgregarProveedor.class
 com\mycompany\proyectoempresariales\Vista\GUIGridGaseosas$1.class
+com\mycompany\proyectoempresariales\Vista\GUIActualizarProveedorDatos.class
 com\mycompany\proyectoempresariales\Vista\GUIActualizarGaseosa.class
 com\mycompany\proyectoempresariales\Vista\GUIAgregarGaseosa.class
 com\mycompany\proyectoempresariales\Controlador\GuiService.class
