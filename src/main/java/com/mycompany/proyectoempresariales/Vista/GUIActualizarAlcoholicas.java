@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
  * @author andre
  */
 public class GUIActualizarAlcoholicas extends javax.swing.JFrame {
-     private IGuiService guiService = GuiService.getInstance();
+    private IGuiService guiService = GuiService.getInstance();
     private IBebidaService bebidaService = BebidaService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIActualizarAlcoholicas.class.getName());
 

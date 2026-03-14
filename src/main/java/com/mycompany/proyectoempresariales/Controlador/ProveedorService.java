@@ -9,13 +9,13 @@ import java.util.List;
  * @author andre
  */
 public class ProveedorService implements IProveedorService {
-
+    
     private static ProveedorService proveedorService; //Singleton
     private IGuiService guiService = GuiService.getInstance();
     private static List<Proveedor> Proveedores = new ArrayList();
 
     private ProveedorService() {
-
+        cargarProveedoresDefault();
     }
 
     public static ProveedorService getInstance() {
@@ -23,6 +23,27 @@ public class ProveedorService implements IProveedorService {
             proveedorService = new ProveedorService();
         }
         return proveedorService;
+    }
+
+    private void cargarProveedoresDefault() {
+
+        Proveedores.add(
+                Proveedor.builder()
+                        .Codigo(1)
+                        .Nombre("Postobon")
+                        .Telefono("22222")
+                        .Estado("Activo")
+                        .build()
+        );
+        Proveedores.add(
+                Proveedor.builder()
+                        .Codigo(2)
+                        .Nombre("The Coca-Cola Company")
+                        .Telefono("3333333")
+                        .Estado("Activo")
+                        .build()
+        );
+        guiService.cambioEnGUI();
     }
 
     @Override

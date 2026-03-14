@@ -4,6 +4,10 @@
  */
 package com.mycompany.proyectoempresariales.Vista;
 
+import com.mycompany.proyectoempresariales.Controlador.BebidaService;
+import com.mycompany.proyectoempresariales.Controlador.IBebidaService;
+import com.mycompany.proyectoempresariales.Controlador.IProveedorService;
+import com.mycompany.proyectoempresariales.Controlador.ProveedorService;
 import com.mycompany.proyectoempresariales.Modelo.Proveedor;
 import javax.swing.JOptionPane;
 
@@ -12,7 +16,8 @@ import javax.swing.JOptionPane;
  * @author ISABELLA
  */
 public class GUIBuscarProveedor extends javax.swing.JFrame {
-    
+     private IBebidaService bebidaService = BebidaService.getInstance();
+    private IProveedorService proveedorService  = ProveedorService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIBuscarProveedor.class.getName());
 
     /**
@@ -54,19 +59,20 @@ public class GUIBuscarProveedor extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
                         .addComponent(lblCodigo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCodigoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(btnBuscarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtCodigoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnBuscarProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,52 +92,18 @@ public class GUIBuscarProveedor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProveedorActionPerformed
-        try {
-        int codigo = Integer.parseInt(txtCodigoProveedor.getText());
-
-        Proveedor proveedor = Proveedor.buscarProveedor(codigo);
-
-        if (proveedor != null) {
-            javax.swing.JOptionPane.showMessageDialog(this,
-                    "Proveedor encontrado\n\n"
-                    + "Código: " + proveedor.getCodigo() + "\n"
-                    + "Nombre: " + proveedor.getNombre() + "\n"
-                    + "Teléfono: " + proveedor.getTelefono() + "\n"
-                    + "Cantidad de gaseosas: " + proveedor.getGaseosas().size());
-        } else {
-            javax.swing.JOptionPane.showMessageDialog(this, "No se encontró un proveedor con ese código");
-        }
-
-    } catch (NumberFormatException e) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Ingrese un código válido");
-    }
+       int Codigo = Integer.parseInt(txtCodigoProveedor.getText());
+       Proveedor proveedor = proveedorService.buscarProveedor(Codigo);
+       if(proveedor != null){
+           GUIBuscarProveedorResult gui = new GUIBuscarProveedorResult();
+           gui.llenardatos(proveedor);
+           gui.setVisible(true);
+       }else
+           JOptionPane.showMessageDialog(this, "Proveedor no existente");
         
     }//GEN-LAST:event_btnBuscarProveedorActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
- java.awt.EventQueue.invokeLater(() -> new GUIBuscarProveedor().setVisible(true));
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarProveedor;
