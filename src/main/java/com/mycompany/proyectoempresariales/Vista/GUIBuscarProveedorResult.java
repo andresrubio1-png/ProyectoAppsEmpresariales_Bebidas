@@ -202,7 +202,8 @@ public class GUIBuscarProveedorResult extends javax.swing.JFrame {
         txtTelefonoProveedor.setText(proveedor.getTelefono());
         txtEstado.setText(proveedor.getEstado());
         List<Gaseosa> lista = proveedor.getGaseosas();
-        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        if(lista!=null){
+           DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
         modelo.setRowCount(0);
         for (Gaseosa b : lista) {
             modelo.addRow(new Object[]{
@@ -218,7 +219,12 @@ public class GUIBuscarProveedorResult extends javax.swing.JFrame {
                 b.getSabor(),
                 b.getCantidadGas()
             });
+        } 
+        }else {
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        modelo.setRowCount(0);
         }
+        
 
     }
 

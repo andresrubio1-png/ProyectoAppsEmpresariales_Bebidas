@@ -149,6 +149,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itemAgregarProveedorActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuAgregarGasProv">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Agregar Gaseosa a Proveedor"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuAgregarGasProvActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itemBuscarProveedor">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Buscar Proveedor"/>

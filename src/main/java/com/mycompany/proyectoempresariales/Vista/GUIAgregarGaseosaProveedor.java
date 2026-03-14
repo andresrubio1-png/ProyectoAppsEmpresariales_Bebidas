@@ -45,7 +45,7 @@ public class GUIAgregarGaseosaProveedor extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtCodGaseosa = new javax.swing.JTextField();
         btnBuscarGas = new javax.swing.JButton();
-        btnBuscar1 = new javax.swing.JButton();
+        btnBuscarPro = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtNombreGaseosa = new javax.swing.JTextField();
         btnAgregarGasProveedor = new javax.swing.JButton();
@@ -71,8 +71,9 @@ public class GUIAgregarGaseosaProveedor extends javax.swing.JFrame {
         btnBuscarGas.setToolTipText("");
         btnBuscarGas.addActionListener(this::btnBuscarGasActionPerformed);
 
-        btnBuscar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnBuscar1.setText("Buscar Proveedor");
+        btnBuscarPro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBuscarPro.setText("Buscar Proveedor");
+        btnBuscarPro.addActionListener(this::btnBuscarProActionPerformed);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Nombre:");
@@ -110,7 +111,7 @@ public class GUIAgregarGaseosaProveedor extends javax.swing.JFrame {
                                         .addGap(7, 7, 7))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
-                                        .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnBuscarPro, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))))
                         .addGap(21, 21, 21))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -133,7 +134,7 @@ public class GUIAgregarGaseosaProveedor extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtCodigoProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscar1)
+                .addComponent(btnBuscarPro)
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -209,7 +210,26 @@ public class GUIAgregarGaseosaProveedor extends javax.swing.JFrame {
 
     private void btnBuscarGasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarGasActionPerformed
         // TODO add your handling code here:
+        int CodigoGaseosa = Integer.parseInt(txtCodGaseosa.getText());
+        Bebida bebida = bebidaService.BuscarBebida(CodigoGaseosa);
+        if (!(bebida instanceof Gaseosa)) {
+            JOptionPane.showMessageDialog(this, "La bebida no es una gaseosa");
+        }else
+            txtNombreGaseosa.setText(bebida.getNombre());
+        
     }//GEN-LAST:event_btnBuscarGasActionPerformed
+
+    private void btnBuscarProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProActionPerformed
+        // TODO add your handling code here:
+        int Codigo = Integer.parseInt(txtCodigoProveedor.getText());
+       Proveedor proveedor = proveedorService.buscarProveedor(Codigo);
+       if(proveedor !=null ){
+           txtNombreProveedor.setText(proveedor.getNombre());
+       }
+       else
+           JOptionPane.showMessageDialog(this, "Proveedor no Existente");
+        
+    }//GEN-LAST:event_btnBuscarProActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,8 +258,8 @@ public class GUIAgregarGaseosaProveedor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarGasProveedor;
-    private javax.swing.JButton btnBuscar1;
     private javax.swing.JButton btnBuscarGas;
+    private javax.swing.JButton btnBuscarPro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

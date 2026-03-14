@@ -53,6 +53,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         menuEliminar1 = new javax.swing.JMenuItem();
         jMenuProveedor = new javax.swing.JMenu();
         itemAgregarProveedor = new javax.swing.JMenuItem();
+        jMenuAgregarGasProv = new javax.swing.JMenuItem();
         itemBuscarProveedor = new javax.swing.JMenuItem();
         itemListarProveedor = new javax.swing.JMenuItem();
         itemEliminarProveedor = new javax.swing.JMenuItem();
@@ -136,6 +137,10 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         itemAgregarProveedor.setText("Agregar Proveedor");
         itemAgregarProveedor.addActionListener(this::itemAgregarProveedorActionPerformed);
         jMenuProveedor.add(itemAgregarProveedor);
+
+        jMenuAgregarGasProv.setText("Agregar Gaseosa a Proveedor");
+        jMenuAgregarGasProv.addActionListener(this::jMenuAgregarGasProvActionPerformed);
+        jMenuProveedor.add(jMenuAgregarGasProv);
 
         itemBuscarProveedor.setText("Buscar Proveedor");
         itemBuscarProveedor.addActionListener(this::itemBuscarProveedorActionPerformed);
@@ -296,6 +301,12 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
         gui.setVisible(true);
     }//GEN-LAST:event_jMenuActualizarLicorActionPerformed
 
+    private void jMenuAgregarGasProvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAgregarGasProvActionPerformed
+        GUIAgregarGaseosaProveedor gui = new GUIAgregarGaseosaProveedor();
+        gui.setLocationRelativeTo(null);
+        gui.setVisible(true);
+    }//GEN-LAST:event_jMenuAgregarGasProvActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMenuItemPrecioVentaGaseosa;
@@ -315,6 +326,7 @@ public class GUIPantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuItem jMenuActualizarGas;
     private javax.swing.JMenuItem jMenuActualizarLicor;
+    private javax.swing.JMenuItem jMenuAgregarGasProv;
     private javax.swing.JMenuItem jMenuBalance;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;

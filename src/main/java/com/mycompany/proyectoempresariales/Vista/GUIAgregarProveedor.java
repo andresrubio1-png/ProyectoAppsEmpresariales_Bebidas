@@ -64,6 +64,7 @@ public class GUIAgregarProveedor extends javax.swing.JFrame {
         jLabel2.setText("Código:");
 
         txtEstado.setEditable(false);
+        txtEstado.setText("Disponible");
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Estado:");
@@ -184,6 +185,7 @@ public class GUIAgregarProveedor extends javax.swing.JFrame {
       }
       try {
           proveedorService.addProveedor(proveedor);
+          JOptionPane.showMessageDialog(this, "Proveedor Agregado");
       }catch (Exception e){
           JOptionPane.showMessageDialog(this, "Error al agregar, intente de nuevo");
       }

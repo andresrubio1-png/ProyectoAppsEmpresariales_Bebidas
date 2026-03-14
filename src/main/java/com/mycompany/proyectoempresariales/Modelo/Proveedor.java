@@ -28,6 +28,7 @@ public class Proveedor {
         this.Nombre = Nombre;
         this.Estado = Estado;
         this.Telefono = Telefono;
+        this.Gaseosas = new ArrayList<>();
     }
 
 
