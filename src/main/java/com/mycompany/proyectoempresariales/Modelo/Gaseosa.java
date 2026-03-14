@@ -14,16 +14,17 @@ public class Gaseosa extends Bebida{
     private String Sabor;
     private int Calorias;
     private boolean Retornable;
+    private Proveedor proveedor;
     // Constructores
 
     public Gaseosa(double CantidadGas,String Sabor,int Calorias,boolean Retornable,int Codigo, String Nombre,
-            double Volumen, double Precio, int Stock, double CantidadAzucar, String TipoEnvase, Date FechaVencimiento,String Estado) throws Exception {
+            double Volumen, double Precio, int Stock, double CantidadAzucar, String TipoEnvase, 
+            Date FechaVencimiento,String Estado) throws Exception {
         super(Codigo, Nombre, Volumen, Precio, Stock, CantidadAzucar, TipoEnvase, FechaVencimiento,Estado);
         setCantidadGas(CantidadGas);
         this.Sabor=Sabor;
         setCalorias(Calorias);
         this.Retornable = Retornable;
-        
     }
     public boolean getRetornable(){
         return Retornable;

@@ -4,7 +4,6 @@
  */
 package com.mycompany.proyectoempresariales.Modelo;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Builder;
@@ -31,12 +30,15 @@ public class Proveedor {
         this.Gaseosas = new ArrayList<>();
     }
 
-
-
     public void setCodigo(int Codigo) throws Exception {
         if (Codigo < 1) {
             throw new Exception("Código no válido!");
         }
         this.Codigo = Codigo;
+    }
+
+    @Override
+    public String toString() {
+        return Nombre;
     }
 }

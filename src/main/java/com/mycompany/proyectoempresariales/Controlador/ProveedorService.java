@@ -51,13 +51,17 @@ public class ProveedorService implements IProveedorService {
         if (gaseosa == null) {
             throw new Exception("La gaseosa es null");
         }
-
         if (proveedor == null) {
             throw new Exception("Proveedor no válido");
+        }
+        Proveedor proveedorActual = gaseosa.getProveedor();
+        if (proveedorActual != null && proveedorActual != proveedor) {  // Si ya tenía proveedor y es diferente, quitarla del anterior
+            proveedorActual.getGaseosas().remove(gaseosa);
         }
         if (!proveedor.getGaseosas().contains(gaseosa)) {
             proveedor.getGaseosas().add(gaseosa);
         }
+        gaseosa.setProveedor(proveedor);
         guiService.cambioEnGUI();
     }
 
@@ -77,6 +81,7 @@ public class ProveedorService implements IProveedorService {
         proveedor.setEstado("Inactivo");
         for (Gaseosa g : proveedor.getGaseosas()) {
             g.setEstado("Sin proveedor");
+            g.setProveedor(null);
             g.setStock(0);
         }
         proveedor.getGaseosas().clear();
@@ -106,6 +111,5 @@ public class ProveedorService implements IProveedorService {
         proveedor.setEstado(estado);
         guiService.cambioEnGUI();
     }
-
 
 }

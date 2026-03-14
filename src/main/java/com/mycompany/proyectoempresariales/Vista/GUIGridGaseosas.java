@@ -57,13 +57,13 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
         jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Codigo", "Tipo", "Nombre", "Precio Prod...", "Precio Venta", "Stock", "Estado", "Envase", "Fecha Vencimiento", "Sabor", "Cant Gas"
+                "Codigo", "Proveedor", "Nombre", "Precio Prod...", "Precio Venta", "Stock", "Estado", "Fecha Vencimiento", "Sabor", "Cant Gas"
             }
         ));
         jTable1.setGridColor(new java.awt.Color(0, 102, 102));
@@ -128,7 +128,7 @@ public class GUIGridGaseosas extends javax.swing.JFrame implements IGuiCambiable
 
             modelo.addRow(new Object[]{
                 b.getCodigo(),
-                b.getTipo(),
+                b.getProveedor().getNombre(),
                 b.getNombre(),
                 b.getPrecioProduccion(),
                 b.calcularValorFinal(),

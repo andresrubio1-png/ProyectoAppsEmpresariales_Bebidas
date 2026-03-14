@@ -4,11 +4,11 @@
  */
 package com.mycompany.proyectoempresariales.Vista;
 
-import com.mycompany.proyectoempresariales.Controlador.BebidaService;
-import com.mycompany.proyectoempresariales.Controlador.IBebidaService;
+import com.mycompany.proyectoempresariales.Controlador.*;
 import com.mycompany.proyectoempresariales.Modelo.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -21,7 +21,9 @@ import javax.swing.text.MaskFormatter;
  */
 public class GUIAgregarGaseosa extends javax.swing.JFrame {
 
+     private IGuiService guiService = GuiService.getInstance();
     private IBebidaService bebidaService = BebidaService.getInstance();
+    private IProveedorService proveedorService  = ProveedorService.getInstance();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIAgregarGaseosa.class.getName());
 
     /**
@@ -31,6 +33,7 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(this);
         configurarCampoFecha();
+        cargarProveedores();
     }
 
     private void configurarCampoFecha() {
@@ -90,7 +93,7 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel18 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbProveedores = new javax.swing.JComboBox();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
 
@@ -233,8 +236,8 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel18.setText("Proveedor:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(this::jComboBox1ActionPerformed);
+        cmbProveedores.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbProveedores.addActionListener(this::cmbProveedoresActionPerformed);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -267,7 +270,7 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtVolumen, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(cmbProveedores, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -315,7 +318,7 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
@@ -426,6 +429,7 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
         String Sabor = txtSabor.getText();
         int Calorias = Integer.parseInt(txtCalorias.getText());
         boolean Retornable = "SI".equals(CbRetornable.getSelectedItem());
+        Proveedor proveedor = (Proveedor) cmbProveedores.getSelectedItem();
         //Crear Gaseosa
         try {
             bebida = new Gaseosa(
@@ -434,16 +438,24 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
                     cantAzucar, TipoEnvase, fechaVencimiento,
                     Estado);
             //Agregar a la coleccion
+            proveedorService.agregarGaseosa((Gaseosa) bebida, proveedor);
             bebidaService.addBebidas(bebida);
             JOptionPane.showMessageDialog(this, "Bebida Agregada");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Error al agregar, intente de nuevo");
             Logger.getLogger(GUIAgregarGaseosa.class.getName()).log(Level.SEVERE, null, ex);
         }
-       
 
 
     }//GEN-LAST:event_btnAgregarGaseosaActionPerformed
+
+    public void cargarProveedores() {
+        cmbProveedores.removeAllItems();
+        List<Proveedor> proveedores = proveedorService.listarProveedores();
+        for (Proveedor p : proveedores) {
+            cmbProveedores.addItem(p);
+        }
+    }
 
     private void ftxtFechaVencimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftxtFechaVencimientoActionPerformed
         // TODO add your handling code here:
@@ -461,9 +473,9 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStockActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cmbProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbProveedoresActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cmbProveedoresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -473,8 +485,8 @@ public class GUIAgregarGaseosa extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CbRetornable;
     private javax.swing.JButton btnAgregarGaseosa;
     private javax.swing.JComboBox<String> cbTipoEnvase;
+    private javax.swing.JComboBox cmbProveedores;
     private javax.swing.JFormattedTextField ftxtFechaVencimiento;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

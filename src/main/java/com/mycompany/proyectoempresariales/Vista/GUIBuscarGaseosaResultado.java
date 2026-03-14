@@ -43,6 +43,7 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
         txtCantAzucar.setText(String.valueOf(g.getCantidadAzucar()));
         txtCantGas.setText(String.valueOf(g.getCantidadGas()));
         txtCalorias.setText(String.valueOf(g.getCalorias()));
+        txtProveedor.setText(g.getProveedor().getNombre());
         if(g.getRetornable()==true){
             CbRetornable.setSelectedIndex(0);
         }else
@@ -74,6 +75,7 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
@@ -86,6 +88,7 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         ftxtFechaVencimiento = new javax.swing.JFormattedTextField();
         jLabel18 = new javax.swing.JLabel();
+        txtProveedor = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Resultado");
@@ -142,6 +145,9 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("ACS DISTRIBUCIONES SAS");
 
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel19.setText("Proveedor:");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -171,9 +177,12 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtPrecioProduccion, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel19)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(149, 149, 149)
                                 .addComponent(jLabel12))
@@ -213,7 +222,9 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
                     .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtVolumen)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtVolumen)
+                        .addComponent(jLabel19))
                     .addComponent(jLabel4))
                 .addGap(29, 29, 29)
                 .addComponent(jLabel13)
@@ -336,11 +347,16 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
                     .addContainerGap(132, Short.MAX_VALUE)))
         );
 
+        txtProveedor.setEditable(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 525, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(379, Short.MAX_VALUE)
+                .addComponent(txtProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -351,7 +367,10 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(294, Short.MAX_VALUE)
+                .addComponent(txtProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(292, 292, 292))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -397,6 +416,7 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -414,6 +434,7 @@ public class GUIBuscarGaseosaResultado extends javax.swing.JFrame {
     private javax.swing.JTextField txtDisponible;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtPrecioProduccion;
+    private javax.swing.JTextField txtProveedor;
     private javax.swing.JTextField txtSabor;
     private javax.swing.JTextField txtStock;
     private javax.swing.JTextField txtVolumen;
